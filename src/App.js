@@ -1,26 +1,43 @@
+// @flow
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
-class App extends Component {
+import './App.css';
+import About from './main-pages/About';
+import Projects from './main-pages/Projects';
+import Resume from './main-pages/Resume';
+
+type Props = {};
+type State = {};
+
+class App extends Component<Props, State> {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div>
+          <ul>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/projects">Projects</Link>
+            </li>
+            <li>
+              <Link to="/resume">Resume</Link>
+            </li>
+          </ul>
+  
+          <hr />
+          <Route exact path="/" component={About} />
+          <Route path="/about" component={About} />
+          <Route path="/resume" component={Resume} />
+          <Route path="/projects" component={Projects} />
+        </div>
+      </Router>
     );
   }
 }

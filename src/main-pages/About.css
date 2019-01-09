@@ -1,0 +1,7 @@
+:local(img) {
+  float: left;
+}
+:local(p) {
+  /* float: right; */
+  color: grey;
+}

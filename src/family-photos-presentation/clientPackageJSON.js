@@ -1,15 +1,16 @@
+const clientPackageJSON = `
 {
-  "name": "riyadshauk.com",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "exif": "^0.6.0",
+    "js-sha256": "^0.9.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-pdf": "^4.0.2",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.3",
-    "react-syntax-highlighter": "^10.1.2",
-    "webpack": "^4.28.1"
+    "react-router-dom": "^4.4.0-beta.6",
+    "react-scripts": "2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,8 +28,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-flow": "^6.23.0",
     "flow-bin": "^0.89.0"
   }
 }
+`;
+export default clientPackageJSON;
