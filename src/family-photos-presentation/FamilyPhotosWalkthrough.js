@@ -18,6 +18,7 @@ const FamilyPhotosWalkthrough = ({ match }: { match : Match }) => {
     <div>
       <h2>Family Photos App Walkthrough</h2>
       <p>Written by Riyad Shauk on Tue Jan 08 2019 GMT-0800 (Pacific Standard Time)</p>
+      <p>Last updated on Wed Jan 09 2019 21:50:55 GMT-0800 (Pacific Standard Time)</p>
       <h3>This project is a WIP and something I plan on using as a central location for storing and sharing family photos.</h3>
       <p>
         Down the road, I may consider integrating with (basically being able to upload to) 

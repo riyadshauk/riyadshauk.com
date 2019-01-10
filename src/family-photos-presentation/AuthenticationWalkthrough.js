@@ -123,7 +123,7 @@ app.use('/photos', photosRouter);
         And to properly understand the above, we should understand how `PrivateRoute` works, so here's that (I guess my syntax highlighter doesn't like JS that's too modern...):
       </p>
       {
-        CodeSnippet(privateRoute, 'typescript')
+        CodeSnippet(privateRoute, 'react')
       }
       <p>
         From this snippet, we see that we only render the protected route (which is the PhotoFeed component), once 
@@ -144,7 +144,9 @@ app.use('/photos', photosRouter);
       </p>
       <p>
         You're now ready to jump into the codebase to understand more, or see the various `@todo` directives that still need work
-        – feel free to use it with your family and start contributing (once I open-source it)!
+        – feel free to use it with your family and start contributing 
+        (<a href="https://github.com/riyadshauk/family-photos-client">https://github.com/riyadshauk/family-photos-client</a>,
+        <a href="https://github.com/riyadshauk/family-photos-server">https://github.com/riyadshauk/family-photos-server</a>)!
       </p>
 
 
