@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 
 import './App.css';
+import Home from './main-pages/Home';
 import About from './main-pages/About';
 import Projects from './main-pages/Projects';
 import Resume from './main-pages/Resume';
@@ -21,6 +22,9 @@ class App extends Component<Props, State> {
         <div>
           <ul>
             <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
               <Link to="/about">About</Link>
             </li>
             <li>
@@ -32,7 +36,7 @@ class App extends Component<Props, State> {
           </ul>
   
           <hr />
-          <Route exact path="/" component={About} />
+          <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/resume" component={Resume} />
           <Route path="/projects" component={Projects} />
