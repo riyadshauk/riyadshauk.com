@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react';
+import styles from './Home.css';
 const Home = () => {
   return (
     <div>
@@ -17,8 +18,12 @@ const Home = () => {
       <p>
         Thanks for visiting!
       </p>
+      <img src="./our_tandem.jpg" className={styles.photo} />
+      <p>My wife, Ayesha, and I after taking the train down to Long Beach before riding back up to Santa Monica on our (then-new) tandem bike.</p>
+      <img src="./skull_rock_climb_hike.jpg" className={styles.photo} />
+      <p>Me trying to get out of a tough position on Skull Rock in the Pacific Palisades after hiking up there. (Photo creds: Ayesha)</p>
       <footer>
-        Updated by Riyad Shauk on Thu Jan 10 2019 09:39:15 GMT-0800 (Pacific Standard Time)
+        Updated by Riyad Shauk on Thu Jan 10 2019 10:24:44 GMT-0800 (Pacific Standard Time)
       </footer>
     </div>
   );

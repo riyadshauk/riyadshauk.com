@@ -1,7 +1,7 @@
 :local(.photo) {
-  float: left;
+  width: 100%;
+  height: auto;
 }
 :local(p) {
-  /* float: right; */
   color: grey;
 }
