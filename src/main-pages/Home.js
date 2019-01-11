@@ -17,6 +17,11 @@ const Home = () => {
       <p>
         Thanks for visiting!
       </p>
+      <p>
+        <strong>Disclaimer</strong>: Sorry, in advance, if some static files are broken; I'm currently learning
+         how to use <a href="https://docs.nginx.com/">nginx</a> for the first time and things don't always work correctly.
+          I plan on adding front-end browser testing down the road, for this reason.
+      </p>
       <div className={styles.photoContainer}>
       	<img src="./our_tandem.jpg" className={styles.photo} />
       	<p>My wife, Ayesha, and I after taking the train down to Long Beach before riding back up to Santa Monica on our (then-new) tandem bike.</p>
@@ -27,7 +32,7 @@ const Home = () => {
       </div>
 	  <div className={styles.footerContainer}>
       <footer>
-        Updated by Riyad Shauk on Fri Jan 11 2019 01:15:35 GMT-0800 (Pacific Standard Time)
+        Updated by Riyad Shauk on Fri Jan 11 2019 11:30:27 GMT-0800 (Pacific Standard Time)
       </footer>
 	  </div>
     </div>
