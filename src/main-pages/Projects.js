@@ -24,7 +24,7 @@ const Projects = ({ match }: { match : Match }) => {
           <Link to={`${match.url}/chess`}>Chess: A Client-side Chess Game written in TypeScript</Link>
         </li>
         <li>
-          <Link to={`${match.url}/family-photos-presentation`}>Family Photos Presentation: A walkthrough of a full-stack Express + React app I recently built</Link>
+          <Link to={`${match.url}/family-photos-presentation`}>Family Photos Walkthrough: A walkthrough of a full-stack Express + React app I recently built</Link>
         </li>
       </ul>
 
