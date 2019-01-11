@@ -1,6 +1,10 @@
 // @flow
 import React, { Component } from 'react';
 import { Document, Page } from 'react-pdf';
+import { pdfjs } from 'react-pdf';
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 type Props = {};
 type State = {
@@ -10,7 +14,7 @@ type State = {
 
 class Resume extends Component<Props, State> {
   state = {
-    numPages: 1,
+    numPages: null,
     pageNumber: 1,
   }
  
@@ -24,7 +28,7 @@ class Resume extends Component<Props, State> {
     return (
       <div>
         <h2>Resume</h2>
-        <a href="./resume.pdf">Link to My Resume</a>
+        <a href="./resume.pdf">Link to download my Resume</a>
         <Document
           file="./resume.pdf"
           onLoadSuccess={this.onDocumentLoadSuccess}
