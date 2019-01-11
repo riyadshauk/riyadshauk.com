@@ -2,6 +2,14 @@
   width: 100%;
   height: auto;
 }
+:local(.photoContainer) {
+  width: 48%;
+  float: left;
+  padding: 1%;
+}
+:local(.footerContainer) {
+  display: block;
+}
 :local(p) {
   color: grey;
 }

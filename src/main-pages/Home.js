@@ -17,13 +17,19 @@ const Home = () => {
       <p>
         Thanks for visiting!
       </p>
-      <img src="./our_tandem.jpg" className={styles.photo} />
-      <p>My wife, Ayesha, and I after taking the train down to Long Beach before riding back up to Santa Monica on our (then-new) tandem bike.</p>
-      <img src="./skull_rock_climb_hike.jpg" className={styles.photo} />
-      <p>Me trying to get out of a tough position on Skull Rock in the Pacific Palisades after hiking up there. (Photo creds: Ayesha)</p>
+      <div className={styles.photoContainer}>
+      	<img src="./our_tandem.jpg" className={styles.photo} />
+      	<p>My wife, Ayesha, and I after taking the train down to Long Beach before riding back up to Santa Monica on our (then-new) tandem bike.</p>
+      </div>
+      <div className={styles.photoContainer}>
+      	<img src="./skull_rock_climb_hike.jpg" className={styles.photo} />
+      	<p>Me trying to get out of a tough position on Skull Rock in the Pacific Palisades after hiking up there. (Photo creds: Ayesha)</p>
+      </div>
+	  <div className={styles.footerContainer}>
       <footer>
         Updated by Riyad Shauk on Fri Jan 11 2019 01:15:35 GMT-0800 (Pacific Standard Time)
       </footer>
+	  </div>
     </div>
   );
 }
