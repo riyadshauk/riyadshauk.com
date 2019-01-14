@@ -17,11 +17,6 @@ const Home = () => {
       <p>
         Thanks for visiting!
       </p>
-      <p>
-        <strong>Disclaimer</strong>: Sorry, in advance, if some static files are broken; I'm currently learning
-         how to use <a href="https://docs.nginx.com/">nginx</a> for the first time and things don't always work correctly.
-          I plan on adding front-end browser testing down the road, for this reason.
-      </p>
       <div className={styles.photoContainer}>
       	<img src="./our_tandem.jpg" className={styles.photo} />
       	<p>My wife, Ayesha, and I after taking the train down to Long Beach before riding back up to Santa Monica on our (then-new) tandem bike.</p>
@@ -31,7 +26,15 @@ const Home = () => {
       	<p>Me trying to get out of a tough position on Skull Rock in the Pacific Palisades after hiking up there. (Photo creds: Ayesha)</p>
       </div>
       <footer>
-        Updated by Riyad Shauk on Sun Jan 13 2019 18:28:49 GMT-0800 (Pacific Standard Time)
+        <div>
+          Updated by Riyad Shauk on Sun Jan 13 2019 18:28:49 GMT-0800 (Pacific Standard Time)
+        </div>
+        <div>
+          Server powered by <a href="https://docs.nginx.com/">nginx</a>.
+        </div>
+        <div>
+          TLS / HTTPS security: courtesy of <a href="https://www.eff.org/">Electronic Frontier Foundation</a> and their brilliant child, <a href="https://letsencrypt.org">Let's Encrypt</a>.
+        </div>
       </footer>
     </div>
   );
