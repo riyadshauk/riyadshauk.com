@@ -30,11 +30,9 @@ const Home = () => {
       	<img src="./skull_rock_climb_hike.jpg" className={styles.photo} />
       	<p>Me trying to get out of a tough position on Skull Rock in the Pacific Palisades after hiking up there. (Photo creds: Ayesha)</p>
       </div>
-	  <div className={styles.footerContainer}>
       <footer>
-        Updated by Riyad Shauk on Fri Jan 11 2019 11:30:27 GMT-0800 (Pacific Standard Time)
+        Updated by Riyad Shauk on Sun Jan 13 2019 18:28:49 GMT-0800 (Pacific Standard Time)
       </footer>
-	  </div>
     </div>
   );
 }

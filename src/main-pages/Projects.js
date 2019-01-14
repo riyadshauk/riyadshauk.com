@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import FamilyPhotosWalkthrough from '../family-photos-presentation/FamilyPhotosWalkthrough';
 import Chess from './Chess';
+import FamilyPhotos from './FamilyPhotos';
 
 type Match = {
   url: string,
@@ -24,15 +25,19 @@ const Projects = ({ match }: { match : Match }) => {
           <Link to={`${match.url}/chess`}>Chess: A Client-side Chess Game written in TypeScript</Link>
         </li>
         <li>
-          <Link to={`${match.url}/family-photos-presentation`}>Family Photos Walkthrough: A walkthrough of a full-stack Express + React app I recently built</Link>
+          <Link to={`${match.url}/photos`}>Family Photos App (React + Express + Postgres)</Link>
+        </li>
+        <li>
+          <Link to={`${match.url}/family-photos-walkthrough`}>Family Photos Walkthrough: A walkthrough of a full-stack Express + React app I recently built</Link>
         </li>
       </ul>
 
       {/* <Route path={`${match.path}/:projectId`} component={Project} /> */}
       <Switch>
-        { console.log('${match.path}/family-photos-presentation:', `${match.path}/family-photos-presentation`) }
-        <Route path={`${match.path}/family-photos-presentation`} component={FamilyPhotosWalkthrough} />
+        { console.log('${match.path}/family-photos-walkthrough:', `${match.path}/family-photos-walkthrough`) }
+        <Route path={`${match.path}/family-photos-walkthrough`} component={FamilyPhotosWalkthrough} />
         <Route path={`${match.path}/chess`} component={Chess} />
+        <Route path={`${match.path}/photos`} component={FamilyPhotos} />
         <Route
           exact
           path={match.path}
@@ -42,13 +47,5 @@ const Projects = ({ match }: { match : Match }) => {
     </div>
   );
 }
-
-// const Project = ({ match }: { match : Match }) => {
-//   return (
-//     <div>
-//       <h3>{match.params.projectId}</h3>
-//     </div>
-//   );
-// }
 
 export default Projects;

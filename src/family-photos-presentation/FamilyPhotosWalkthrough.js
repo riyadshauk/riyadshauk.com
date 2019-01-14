@@ -36,19 +36,22 @@ const FamilyPhotosWalkthrough = ({ match }: { match : Match }) => {
         set up, maintain, and extend. They've also been very popular for the past several years, when it comes 
         to full-stack web applications.
       </p>
-      <ul>
+
+      <AuthenticationWalkthrough />
+
+      {/* <ul>
         <li>
           <Link to={`${match.url}/auth`}>How I implemented full-stack authentication</Link>
         </li>
-      </ul>
+      </ul> */}
 
       {/* <Route path={`${match.path}/:walkthroughId`} component={Walkthrough} /> */}
-      <Route
+      {/* <Route
         exact
         path={match.path}
         render={() => <h3>Please select a walkthrough.</h3>}
       />
-      <Route path={`${match.url}/auth`} component={AuthenticationWalkthrough} />
+      <Route path={`${match.url}/auth`} component={AuthenticationWalkthrough} /> */}
     </div>
   );
 }

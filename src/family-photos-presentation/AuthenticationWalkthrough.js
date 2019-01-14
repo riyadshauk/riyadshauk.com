@@ -145,7 +145,7 @@ app.use('/photos', photosRouter);
       <p>
         You're now ready to jump into the codebase to understand more, or see the various `@todo` directives that still need work
         – feel free to use it with your family and start contributing 
-        (<a href="https://github.com/riyadshauk/family-photos-client">https://github.com/riyadshauk/family-photos-client</a>,
+        (<a href="https://github.com/riyadshauk/family-photos-client">https://github.com/riyadshauk/family-photos-client</a>, &nbsp;
         <a href="https://github.com/riyadshauk/family-photos-server">https://github.com/riyadshauk/family-photos-server</a>)!
       </p>
 
