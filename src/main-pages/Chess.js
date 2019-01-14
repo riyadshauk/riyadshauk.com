@@ -6,8 +6,8 @@ const Chess = () => {
   return (
     <div>
       <h2>Chess</h2>
-      <div><a href="http://riyadshauk.com/chess">A link to a (client-side only) chess game I wrote</a></div>
-      <Iframe url="http://riyadshauk.com/chess"
+      <div><a href="https://riyadshauk.com/chess">A link to a (client-side only) chess game I wrote</a></div>
+      <Iframe url="https://riyadshauk.com/chess"
         width="700px"
         height="700px"
         id="myId"
