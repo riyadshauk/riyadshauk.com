@@ -27,13 +27,16 @@ const Home = () => {
       </div>
       <footer>
         <div>
-          Updated by Riyad Shauk on Sun Jan 13 2019 18:28:49 GMT-0800 (Pacific Standard Time)
+          Updated by Riyad Shauk on Tue Jan 15 2019 21:50:38 GMT-0800 (Pacific Standard Time)
         </div>
         <div>
           Server powered by <a href="https://docs.nginx.com/">nginx</a>.
         </div>
         <div>
           TLS / HTTPS security: courtesy of <a href="https://www.eff.org/">Electronic Frontier Foundation</a> and their brilliant child, <a href="https://letsencrypt.org">Let's Encrypt</a>.
+        </div>
+        <div>
+          Copyright © 2019, Riyad Shauk
         </div>
       </footer>
     </div>
