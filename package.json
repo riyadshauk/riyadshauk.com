@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-iframe": "^1.3.3",
-    "react-pdf": "^4.0.2",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.3",
-    "react-syntax-highlighter": "^10.1.2"
+    "countly-sdk-web": "^19.8.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-iframe": "^1.8.0",
+    "react-pdf": "^4.1.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.1.1",
+    "react-syntax-highlighter": "^11.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -29,6 +30,6 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-flow": "^6.23.0",
-    "flow-bin": "^0.89.0"
+    "flow-bin": "^0.107.0"
   }
 }

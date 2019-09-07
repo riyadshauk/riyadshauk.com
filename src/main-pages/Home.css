@@ -1,15 +1,22 @@
-:local(.photo) {
+.photo {
   width: 100%;
   height: auto;
 }
-:local(.photoContainer) {
+.photoContainer {
   width: 48%;
   float: left;
   padding: 1%;
 }
-:local(.footerContainer) {
+.footerContainer {
   display: block;
 }
-:local(p) {
+p {
   color: grey;
+}
+.countlyBadge {
+  width: 145px;
+  height: 60px;
+}
+img {
+  padding-right: 10px;
 }
