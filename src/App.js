@@ -11,6 +11,9 @@ import Home from './main-pages/Home';
 import About from './main-pages/About';
 import Projects from './main-pages/Projects';
 import Resume from './main-pages/Resume';
+import nginxLogo from './assets/nginx-logo.svg';
+import letsencryptLogo from './assets/letsencrypt-logo-horizontal.svg';
+import countlyLogo from './assets/countly-logo.svg';
 
 import { UnorderedList as Navigation, Link as Item } from './styles';
 
@@ -76,13 +79,13 @@ class App extends Component<Props, State> {
           </div>
           <FooterBadges>
             <a href="https://docs.nginx.com">
-              <img src="nginx-logo.svg" alt="Web Server Load Balancing with NGINX Plus"></img>
+              <img src={nginxLogo} alt="Web Server Load Balancing with NGINX Plus"></img>
             </a>
             <a href="https://letsencrypt.org">
-              <img src="letsencrypt-logo-horizontal.svg" alt="Let's Encrypt"></img>
+              <img src={letsencryptLogo} alt="Let's Encrypt"></img>
             </a>
             <a href="https://count.ly/" rel="nofollow">
-              <CountlyBadge src="countly-logo.svg" alt="Countly - Product Analytics" />
+              <CountlyBadge src={countlyLogo} alt="Countly - Product Analytics" />
             </a>
           </FooterBadges>
           <div>
