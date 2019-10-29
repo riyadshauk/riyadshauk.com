@@ -2,7 +2,10 @@
 import React, { Component } from 'react';
 import { Document, Page } from 'react-pdf';
 import { pdfjs } from 'react-pdf';
+import { AnchorContainer, Page as PageContainer } from '../styles';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
+// $FlowFixMe
+import resume from '../assets/resume.pdf';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -17,26 +20,28 @@ class Resume extends Component<Props, State> {
     numPages: null,
     pageNumber: 1,
   }
- 
+
   onDocumentLoadSuccess = ({ numPages }: { numPages: any }) => {
     this.setState({ numPages });
   }
- 
+
   render() {
     const { pageNumber, numPages } = this.state;
- 
+
     return (
-      <div>
+      <PageContainer>
         <h2>Resume</h2>
-        <a href="./resume.pdf">Link to download my Resume</a>
+        <AnchorContainer>
+          <a href={resume}>Link to download my Resume</a>
+        </AnchorContainer>
         <Document
-          file="./resume.pdf"
+          file={resume}
           onLoadSuccess={this.onDocumentLoadSuccess}
         >
           <Page pageNumber={pageNumber} />
         </Document>
         <p>Page {pageNumber} of {numPages}</p>
-      </div>
+      </PageContainer>
     );
   }
 }

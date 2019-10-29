@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Route,
   Link,
@@ -9,6 +9,7 @@ import FamilyPhotosWalkthrough from '../family-photos-presentation/FamilyPhotosW
 import Chess from './Chess';
 import FamilyPhotos from './FamilyPhotos';
 import DigitalAssistant from './DigitalAssistant';
+import { Page, UnorderedList, Link as Item } from '../styles';
 
 type Match = {
   url: string,
@@ -19,22 +20,22 @@ type Match = {
 
 const Projects = ({ match }: { match: Match }) => {
   return (
-    <div>
+    <Page>
       <h2>Projects</h2>
-      <ul>
-        <li>
+      <UnorderedList>
+        <Item>
           <Link to={`${match.url}/digital-assistant`}>[Oracle] Digital Assistant Diagram Builder: A graphic (React/Redux), drag-and-drop-based YAML generator</Link>
-        </li>
-        <li>
+        </Item>
+        <Item>
           <Link to={`${match.url}/chess`}>Chess: A Client-side Chess Game written in TypeScript</Link>
-        </li>
-        <li>
+        </Item>
+        <Item>
           <Link to={`${match.url}/photos`}>Family Photos App (React + Express + Postgres)</Link>
-        </li>
-        <li>
+        </Item>
+        <Item>
           <Link to={`${match.url}/family-photos-walkthrough`}>Family Photos Walkthrough: A walkthrough of a full-stack Express + React app I recently built</Link>
-        </li>
-      </ul>
+        </Item>
+      </UnorderedList>
 
       {/* <Route path={`${match.path}/:projectId`} component={Project} /> */}
       <Switch>
@@ -49,7 +50,7 @@ const Projects = ({ match }: { match: Match }) => {
           render={() => <h3>Please select a project.</h3>}
         />
       </Switch>
-    </div>
+    </Page>
   );
 }
 

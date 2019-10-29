@@ -4,13 +4,17 @@
   "private": true,
   "dependencies": {
     "countly-sdk-web": "^19.8.0",
+    "jquery": "^3.4.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-iframe": "^1.8.0",
     "react-pdf": "^4.1.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
-    "react-syntax-highlighter": "^11.0.2"
+    "react-slick": "^0.25.2",
+    "react-syntax-highlighter": "^11.0.2",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^4.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
