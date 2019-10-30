@@ -1,19 +1,9 @@
 // @flow
-import React, { Component } from 'react';
-import {
-  Route,
-  Link
-} from 'react-router-dom';
+import React from 'react';
 
 import AuthenticationWalkthrough from './AuthenticationWalkthrough';
 
-type Match = {
-  url: string,
-  path: string,
-  // and more that idk about...
-};
-
-const FamilyPhotosWalkthrough = ({ match }: { match : Match }) => {
+const FamilyPhotosWalkthrough = () => {
   return (
     <div>
       <h2>Family Photos App Walkthrough</h2>
@@ -36,32 +26,9 @@ const FamilyPhotosWalkthrough = ({ match }: { match : Match }) => {
         set up, maintain, and extend. They've also been very popular for the past several years, when it comes 
         to full-stack web applications.
       </p>
-
       <AuthenticationWalkthrough />
-
-      {/* <ul>
-        <li>
-          <Link to={`${match.url}/auth`}>How I implemented full-stack authentication</Link>
-        </li>
-      </ul> */}
-
-      {/* <Route path={`${match.path}/:walkthroughId`} component={Walkthrough} /> */}
-      {/* <Route
-        exact
-        path={match.path}
-        render={() => <h3>Please select a walkthrough.</h3>}
-      />
-      <Route path={`${match.url}/auth`} component={AuthenticationWalkthrough} /> */}
     </div>
   );
 }
-
-// const Walkthrough = ({ match }) => {
-//   return (
-//     <div>
-//       <h3>{match.params.walkthroughId}</h3>
-//     </div>
-//   );
-// }
 
 export default FamilyPhotosWalkthrough;
