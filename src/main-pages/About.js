@@ -25,7 +25,7 @@ const About = () => {
       <Text>
         Hey, I'm Riyad. I graduated from the University of Illinois at Urbana-Champaign (UIUC)
          with a degree in Math and Computer Science in December 2017. I consider myself a 
-         full-stack software engineer, currently most fluent (can whiteboar) in JavaScript.
+         full-stack software engineer, currently most fluent (can whiteboard) in JavaScript.
       </Text>
       <Text>
         Since I took Data Structures in C++, I have a soft spot for C++ and enjoy the time and space
