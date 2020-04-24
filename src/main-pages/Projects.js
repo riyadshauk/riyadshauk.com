@@ -1,56 +1,126 @@
 // @flow
-import React from 'react';
-import {
-  Route,
-  Link,
-  Switch
-} from 'react-router-dom';
-import FamilyPhotosWalkthrough from '../family-photos-presentation/FamilyPhotosWalkthrough';
-import Chess from './Chess';
-import FamilyPhotos from './FamilyPhotos';
-import DigitalAssistant from './DigitalAssistant';
-import { Page, UnorderedList, Link as Item } from '../styles';
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { Page } from '../styles';
+import chessgameplay from '../assets/chessplay.gif';
+import digitalAssistantScreenshot from '../assets/digital-assistant-screenshot.png';
+import { ProjectLink, ProjectIFrame } from './Project';
 
-type Match = {
+const projects = [
+  {
+    name: 'Chess Game',
+    url: 'https://riyadshauk.com/chess',
+    thumbnail: chessgameplay,
+  },
+  {
+    name: 'Digital Assistant Builder (React/Redux)',
+    url: 'https://riyadshauk.com/digital-assistant',
+    thumbnail: digitalAssistantScreenshot,
+  },
+];
+
+export const ProjectsContainer = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
+export const Sidebar = styled.div`
+  min-width: 300px;
+  overflow: auto;
+`;
+
+export const ProjectThumbnails = styled.div`
+  position: fixed;
+  min-width: 300px;
+  overflow: auto;
+`;
+
+export const ProjectThumbnailContainer = styled.div`
+  padding-bottom: 20px;
+  width: 100%;
+`;
+
+export const ProjectDescriptionContainerDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  &:hover: { /* TODO */
+    cursor: pointer;
+    background-color: green;
+  }
+`;
+
+export const ProjectThumbnail = styled.img`
+  height: 150px;
+`;
+
+const ProjectItems = styled.ul`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+const ProjectItem = styled.div`
+  padding-bottom: 20px;
+  width: 100%;
+`;
+
+type ProjectDescriptionContainerProps = {
+  name: string,
   url: string,
-  path: string,
-  params: any,
-  // and more that idk about...
+  thumbnail: string,
 };
 
-const Projects = ({ match }: { match: Match }) => {
+const ProjectDescriptionContainer = (props: ProjectDescriptionContainerProps) => {
+  const { name, url, thumbnail } = props;
+  const [ projectContainer, setProjectContainer ] = useState(null);
+  useEffect(() => {
+    setProjectContainer(document.getElementById(url));
+  }, [url]);
+  const projectSelected = () => {
+    console.log('ProjectDescriptionContainerDiv has been clicked!!, this:', this);
+    (projectContainer || { scrollIntoView: opts => undefined })
+      .scrollIntoView({ behavior: 'smooth' });
+  };
   return (
-    <Page>
-      <h2>Projects</h2>
-      <UnorderedList>
-        <Item>
-          <Link to={`${match.url}/digital-assistant`}>[Oracle] Digital Assistant Diagram Builder: A graphic (React/Redux), drag-and-drop-based YAML generator</Link>
-        </Item>
-        <Item>
-          <Link to={`${match.url}/chess`}>Chess: A Client-side Chess Game written in TypeScript</Link>
-        </Item>
-        <Item>
-          <Link to={`${match.url}/photos`}>Family Photos App (React + Express + Postgres)</Link>
-        </Item>
-        <Item>
-          <Link to={`${match.url}/family-photos-walkthrough`}>Family Photos Walkthrough: A walkthrough of a full-stack Express + React app I recently built</Link>
-        </Item>
-      </UnorderedList>
+    <ProjectDescriptionContainerDiv
+      onMouseOver={projectSelected}
+    >
+      {name}
+      <ProjectThumbnailContainer>
+        <ProjectThumbnail src={thumbnail} alt={`${name} image`} />
+        <ProjectLink url={url} />
+      </ProjectThumbnailContainer>
+    </ProjectDescriptionContainerDiv>
+  );
+};
 
-      {/* <Route path={`${match.path}/:projectId`} component={Project} /> */}
-      <Switch>
-        {console.log('${match.path}/family-photos-walkthrough:', `${match.path}/family-photos-walkthrough`)}
-        <Route path={`${match.path}/family-photos-walkthrough`} component={FamilyPhotosWalkthrough} />
-        <Route path={`${match.path}/chess`} component={Chess} />
-        <Route path={`${match.path}/digital-assistant`} component={DigitalAssistant} />
-        <Route path={`${match.path}/photos`} component={FamilyPhotos} />
-        <Route
-          exact
-          path={match.path}
-          render={() => <h3>Please select a project.</h3>}
-        />
-      </Switch>
-    </Page>
+const Projects = () => {
+  return (
+    <ProjectsContainer>
+      <Sidebar>
+        <ProjectThumbnails>
+          <Page>
+            <h2>Projects</h2>
+            {
+              projects.map((projectDescriptionContainerProps: ProjectDescriptionContainerProps, idx) =>
+                <ProjectDescriptionContainer {...projectDescriptionContainerProps} key={idx} />
+              )
+            }
+          </Page>
+        </ProjectThumbnails>
+      </Sidebar>
+      <ProjectItems>
+        {
+          // Mark each ProjectItem with id == url so it can be scrolled on mouse click in ProjectDescriptionContainer
+          projects.map(({ url }: ProjectDescriptionContainerProps, idx) => (
+            <ProjectItem key={idx} id={url}>
+              <ProjectIFrame url={url} />
+            </ProjectItem>
+          ))
+        }
+      </ProjectItems>
+    </ProjectsContainer>
   );
 }
 

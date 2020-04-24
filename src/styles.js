@@ -11,6 +11,11 @@ export const AnchorContainer = styled.div`
 `;
 
 export const FlashyAnchorContainer = styled.div`
+  transform: rotate(30deg);
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding-left: 200px;
   a {
     background-color: #4797D5;
     color: #DBAB49;
@@ -26,7 +31,8 @@ export const FlashyAnchorContainer = styled.div`
     border: 1px solid lightcyan;
   }
   padding-top: 5px;
-  padding-bottom: 10px;
+  padding-bottom: 40px;
+  padding-right: 10px;
 `;
 
 export const IframeContainer = styled.div`

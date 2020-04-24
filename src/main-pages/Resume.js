@@ -1,36 +1,47 @@
 // @flow
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Document, Page } from 'react-pdf';
 import { pdfjs } from 'react-pdf';
+import styled from 'styled-components';
 import { FlashyAnchorContainer, Page as PageContainer } from '../styles';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
+const ResumeContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const Resume = () => {
-  const [numPages, setNumPages] = useState(null);
+  const [ , setNumPages] = useState(null);
   const [pageNumber] = useState(1);
 
-  const onDocumentLoadSuccess = ({ numPages }: { numPages: any }) => setNumPages(numPages);
+  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
+    setNumPages(numPages);
+  }
 
   return (
-    <PageContainer>
-      <h2>Resume</h2>
+    <Fragment>
       <FlashyAnchorContainer>
-        Links to download by Resume:
-          &nbsp;
-					<a href="/resume.pdf">PDF</a>
-        &nbsp;
-					<a href="/resume.docx" download="Resume Riyad Shauk.docx">DOCX</a>
+        {'Links: '}
+          <a href="/resume.pdf">PDF</a>
+            {' '}
+          <a href="/resume.docx" download="Resume Riyad Shauk.docx">DOCX</a>
       </FlashyAnchorContainer>
-      <Document
-        file="/resume.pdf"
-        onLoadSuccess={onDocumentLoadSuccess}
-      >
-        <Page pageNumber={pageNumber} />
-      </Document>
-      <p>Page {pageNumber} of {numPages}</p>
-    </PageContainer>
+      <PageContainer>
+        <h2>Resume</h2>
+        <ResumeContainer>
+          <Document
+            file="/resume.pdf"
+            onLoadSuccess={onDocumentLoadSuccess}
+          >
+            <Page pageNumber={pageNumber} />
+          </Document>
+        </ResumeContainer>
+      </PageContainer>
+    </Fragment>
   );
 }
 
