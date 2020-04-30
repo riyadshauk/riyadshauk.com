@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "countly-sdk-web": "^19.8.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-iframe": "^1.8.0",
