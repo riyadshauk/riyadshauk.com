@@ -8,6 +8,18 @@ import { Page } from '../styles';
 import ourTandem from '../assets/our_tandem.jpg';
 import skullRockClimb from '../assets/skull_rock_climb_hike.jpg';
 
+const ThanksForVisiting = styled.svg`
+  float: right;
+  height="100";
+  width="200";
+`;
+
+const MyBackground = styled.p`
+  display: block;
+  width: 50vw;
+  font-size: 1.2rem;
+`;
+
 const SliderContainer = styled.div`
   width: 400px;
 `;
@@ -29,24 +41,15 @@ const Home = () => {
     <Page>
       <h2>Home</h2>
       <center>
-        <svg height="135" width="1000">
-          <text x="0" y="15">
-              Welcome to my webpage!
-          </text>
-          <text x="0" y="45">
-              I like to work on personal projects (which I then tie into this webpage) 
-          </text>
-          <text x="5" y="75">
-              when I get home from work in the evenings.
-          </text>
-          <text x="0" y="105">
-              You can often find my latest project work on
-          </text>
-          <text x="325" y="105" fill="blue"><a href="https://github.com/riyadshauk">my personal GitHub page</a>.</text>
-        </svg>
-        <svg height="100" width="200">
+        <ThanksForVisiting>
           <text x="0" y="15" fill="lightblue" transform="rotate(30 20,40)">Thanks for visiting!</text>
-        </svg>
+        </ThanksForVisiting>
+        <MyBackground>
+          Welcome to my website!
+        </MyBackground>
+        <MyBackground>
+          Interested in my open source projects?: <a href="https://github.com/riyadshauk">https://github.com/riyadshauk</a>.
+        </MyBackground>
         <SliderContainer>
           <Slider {...sliderConfig}>
             <div className="photoContainer">
