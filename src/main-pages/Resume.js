@@ -1,7 +1,6 @@
 // @flow
 import React, { Fragment, useState } from 'react';
-import { Document, Page } from 'react-pdf';
-import { pdfjs } from 'react-pdf';
+import { Document, Page, pdfjs } from 'react-pdf'; //'react-pdf/dist/entry.parcel';
 import styled from 'styled-components';
 import { FlashyAnchorContainer, Page as PageContainer } from '../styles';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
@@ -12,6 +11,7 @@ const ResumeContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  /* overflow-x: auto; */
 `;
 
 const Resume = () => {

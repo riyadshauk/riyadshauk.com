@@ -5,7 +5,7 @@ import { AnchorContainer, IframeContainer } from '../styles';
 
 export const ProjectLink = ({url}: {url: string}) => (
   <AnchorContainer>
-    <a href={url}>Link to Web App</a>
+    <a href={url}>{url}</a>
   </AnchorContainer>
 );
 

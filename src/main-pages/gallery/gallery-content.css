@@ -1,0 +1,6 @@
+img {
+  display: block;
+  max-width: 100%;
+  scroll-snap-align: start;
+  margin-bottom: 1em;
+}

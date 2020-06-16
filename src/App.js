@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 import Home from './main-pages/Home';
 import About from './main-pages/About';
-import Projects from './main-pages/Projects';
+import Projects from './main-pages/ProjectGallery';
 import Resume from './main-pages/Resume';
 
 import { UnorderedList as Navigation, Link as Item } from './styles';
