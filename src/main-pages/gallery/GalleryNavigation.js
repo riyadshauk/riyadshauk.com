@@ -9,6 +9,11 @@ const GalleryNavigation = styled.div`
   overflow-wrap: break-word;
   border-right: 0.5rem dashed blue;
   padding-right: 1rem;
+  * {
+    :hover {
+      opacity: 0.70;
+    }
+  }
 `;
 
 // https://css-tricks.com/how-to-make-a-css-only-carousel/
