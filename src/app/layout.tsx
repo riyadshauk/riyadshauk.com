@@ -8,48 +8,50 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Riyad Shauk - Computer Science & Programming Tutor | LeetCode & SWE Interview Prep | Los Angeles | riyadshauk.com",
-  description: "Expert computer science and programming tutoring by Riyad Shauk. Specializing in LeetCode problems, SWE interview preparation, and coding fundamentals. Available in Los Angeles ($150/hr) and remotely ($100/hr).",
+  title: "Riyad Shauk - Private Programming & Computer Science Tutor | Kids to Adults | Los Angeles (90210, 90402, 90049, 90272, 90077, 90024, 90064, 90230-32, 91011, 91108, 91030, 91105-06) & Online | riyadshauk.com",
+  description: "Patient, experienced programming tutor helping students of all ages build confidence in coding and computer science. From elementary school logic to advanced algorithms, I offer personalized 1-on-1 tutoring in Los Angeles (Beverly Hills, Santa Monica, Brentwood, Pacific Palisades, Bel Air, Westwood, West LA, Culver City, La Cañada, San Marino, South Pasadena, Pasadena) and online.",
   keywords: [
-    "computer science tutor",
     "programming tutor",
-    "leetcode tutor",
-    "leetcode solutions",
-    "leetcode problems",
-    "SWE interview prep",
-    "SWE interview",
-    "SWE interview preparation",
-    "software engineering interview",
+    "computer science tutor",
     "coding tutor",
+    "learn to code",
     "programming help",
-    "algorithm tutor",
-    "data structures tutor",
+    "coding for kids",
+    "coding for teens",
+    "programming help for adults",
+    "computer science tutoring",
     "python tutor",
     "javascript tutor",
     "java tutor",
-    "golang tutor",
-    "go tutor",
-    "node.js tutor",
-    "typescript tutor",
-    "react tutor",
-    "next.js tutor",
-    "html tutor",
-    "css tutor",
-    "C++ tutor",
-    "coding interview prep",
-    "technical interview prep",
-    "Los Angeles tutor",
+    "algorithm tutor",
+    "data structures tutor",
+    "leetcode tutor",
+    "SWE interview prep",
+    "coding bootcamp tutor",
+    "private programming tutor",
+    "Los Angeles programming tutor",
+    "Beverly Hills tutor",
     "Santa Monica tutor",
-    "Highland Park tutor",
+    "Brentwood tutor",
+    "Pacific Palisades tutor",
+    "La Cañada tutor",
+    "San Marino tutor",
+    "90210 tutor",
     "90402 tutor",
-    "90042 tutor",
-    "Santa Monica computer science tutor",
-    "Highland Park programming tutor",
+    "90049 tutor",
+    "90272 tutor",
+    "91011 tutor",
+    "91108 tutor",
+    "Beverly Hills programming tutor",
+    "Santa Monica coding tutor",
+    "Brentwood computer science tutor",
+    "Pacific Palisades algorithm tutor",
+    "La Cañada SWE interview prep",
+    "San Marino programming tutor",
     "Los Angeles coding tutor",
     "remote tutoring",
     "online programming tutor",
     "computer science help",
-    "coding bootcamp tutor",
     "Riyad Shauk",
     "tutoring",
     "private tutor",
@@ -58,7 +60,10 @@ export const metadata: Metadata = {
     "test preparation",
     "in-person tutoring",
     "local tutor",
-    "Los Angeles area tutor"
+    "Los Angeles area tutor",
+    "patient tutor",
+    "experienced tutor",
+    "one-on-one tutoring"
   ],
   authors: [{ name: "Riyad Shauk" }],
   creator: "Riyad Shauk",
@@ -78,22 +83,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://riyadshauk.com",
-    title: "Riyad Shauk - Computer Science & Programming Tutor | LeetCode & SWE Interview Prep | Los Angeles (90402, 90042)",
-    description: "Expert computer science and programming tutoring by Riyad Shauk. Specializing in LeetCode problems, SWE interview preparation, and coding fundamentals. Available in Los Angeles (90402 Santa Monica, 90042 Highland Park) and remotely.",
+    title: "Riyad Shauk - Private Programming & Computer Science Tutor | Kids to Adults | Los Angeles (90210, 90402, 90049, 90272, 90077, 90024, 90064, 90230-32, 91011, 91108, 91030, 91105-06) & Online",
+    description: "Patient, experienced programming tutor helping students of all ages build confidence in coding and computer science. From elementary school logic to advanced algorithms, I offer personalized 1-on-1 tutoring in Los Angeles (Beverly Hills, Santa Monica, Brentwood, Pacific Palisades, Bel Air, Westwood, West LA, Culver City, La Cañada, San Marino, South Pasadena, Pasadena) and online.",
     siteName: "Riyad Shauk Tutoring",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Riyad Shauk - Computer Science & Programming Tutor in Los Angeles",
+        alt: "Riyad Shauk - Patient Programming & Computer Science Tutor in Los Angeles",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Riyad Shauk - Computer Science & Programming Tutor | LeetCode & SWE Interview Prep | Los Angeles (90402, 90042)",
-    description: "Expert computer science and programming tutoring by Riyad Shauk. Specializing in LeetCode problems, SWE interview preparation, and coding fundamentals. Available in Los Angeles (90402 Santa Monica, 90042 Highland Park) and remotely.",
+    title: "Riyad Shauk - Private Programming & Computer Science Tutor | Kids to Adults | Los Angeles (90210, 90402, 90049, 90272, 90077, 90024, 90064, 90230-32, 91011, 91108, 91030, 91105-06) & Online",
+    description: "Patient, experienced programming tutor helping students of all ages build confidence in coding and computer science. From elementary school logic to advanced algorithms, I offer personalized 1-on-1 tutoring in Los Angeles (Beverly Hills, Santa Monica, Brentwood, Pacific Palisades, Bel Air, Westwood, West LA, Culver City, La Cañada, San Marino, South Pasadena, Pasadena) and online.",
     images: ["/og-image.jpg"],
   },
   alternates: {
@@ -123,8 +128,8 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "EducationalService",
-              "name": "Riyad Shauk Computer Science Tutoring",
-              "description": "Expert computer science and programming tutoring specializing in LeetCode problems, SWE interview preparation, and coding fundamentals.",
+              "name": "Riyad Shauk Private Programming Tutoring",
+              "description": "Patient, experienced programming tutor helping students of all ages build confidence in coding and computer science. From elementary school logic to advanced algorithms, I offer personalized 1-on-1 tutoring.",
               "url": "https://riyadshauk.com",
               "telephone": "+1-310-866-6284",
               "email": "riyad.shauk@gmail.com",
@@ -133,18 +138,99 @@ export default function RootLayout({
               "paymentAccepted": "Cash, Credit Card, PayPal",
               "areaServed": [
                 {
-                  "@type": "City",
+                  "@type": "Place",
+                  "name": "Beverly Hills",
+                  "postalCode": "90210"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Beverly Hills",
+                  "postalCode": "90211"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Beverly Hills",
+                  "postalCode": "90212"
+                },
+                {
+                  "@type": "Place",
                   "name": "Santa Monica",
                   "postalCode": "90402"
                 },
                 {
-                  "@type": "City", 
-                  "name": "Highland Park",
-                  "postalCode": "90042"
+                  "@type": "Place",
+                  "name": "Santa Monica",
+                  "postalCode": "90401"
                 },
                 {
-                  "@type": "City",
-                  "name": "Los Angeles"
+                  "@type": "Place",
+                  "name": "Santa Monica",
+                  "postalCode": "90403"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Santa Monica",
+                  "postalCode": "90405"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Brentwood",
+                  "postalCode": "90049"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Pacific Palisades",
+                  "postalCode": "90272"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Bel Air",
+                  "postalCode": "90077"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Westwood",
+                  "postalCode": "90024"
+                },
+                {
+                  "@type": "Place",
+                  "name": "West Los Angeles",
+                  "postalCode": "90064"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Culver City",
+                  "postalCode": "90232"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Culver City",
+                  "postalCode": "90230"
+                },
+                {
+                  "@type": "Place",
+                  "name": "La Cañada Flintridge",
+                  "postalCode": "91011"
+                },
+                {
+                  "@type": "Place",
+                  "name": "San Marino",
+                  "postalCode": "91108"
+                },
+                {
+                  "@type": "Place",
+                  "name": "South Pasadena",
+                  "postalCode": "91030"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Pasadena",
+                  "postalCode": "91105"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Pasadena",
+                  "postalCode": "91106"
                 }
               ],
               "serviceType": [
@@ -153,13 +239,15 @@ export default function RootLayout({
                 "LeetCode Problem Solving",
                 "SWE Interview Preparation",
                 "Algorithm Tutoring",
-                "Data Structures Tutoring"
+                "Data Structures Tutoring",
+                "SAT/AP Computer Science Tutoring",
+                "Test Preparation"
               ],
               "provider": {
                 "@type": "Person",
                 "name": "Riyad Shauk",
-                "jobTitle": "Computer Science Tutor",
-                "description": "Experienced software engineer and computer science tutor"
+                "jobTitle": "Private Programming Tutor",
+                "description": "Patient, experienced software engineer and programming tutor helping students of all ages build confidence and understanding in coding"
               },
               "offers": {
                 "@type": "Offer",
@@ -167,7 +255,7 @@ export default function RootLayout({
                 "priceCurrency": "USD",
                 "priceSpecification": {
                   "@type": "UnitPriceSpecification",
-                  "price": "100",
+                  "price": "150",
                   "priceCurrency": "USD",
                   "unitText": "hour"
                 }
@@ -184,14 +272,99 @@ export default function RootLayout({
                   "name": "In-Person Tutoring",
                   "areaServed": [
                     {
-                      "@type": "City",
+                      "@type": "Place",
+                      "name": "Beverly Hills",
+                      "postalCode": "90210"
+                    },
+                    {
+                      "@type": "Place",
+                      "name": "Beverly Hills",
+                      "postalCode": "90211"
+                    },
+                    {
+                      "@type": "Place",
+                      "name": "Beverly Hills",
+                      "postalCode": "90212"
+                    },
+                    {
+                      "@type": "Place",
                       "name": "Santa Monica",
                       "postalCode": "90402"
                     },
                     {
-                      "@type": "City",
-                      "name": "Highland Park", 
-                      "postalCode": "90042"
+                      "@type": "Place",
+                      "name": "Santa Monica",
+                      "postalCode": "90401"
+                    },
+                    {
+                      "@type": "Place",
+                      "name": "Santa Monica",
+                      "postalCode": "90403"
+                    },
+                    {
+                      "@type": "Place",
+                      "name": "Santa Monica",
+                      "postalCode": "90405"
+                    },
+                    {
+                      "@type": "Place",
+                      "name": "Brentwood",
+                      "postalCode": "90049"
+                    },
+                    {
+                      "@type": "Place",
+                      "name": "Pacific Palisades",
+                      "postalCode": "90272"
+                    },
+                    {
+                      "@type": "Place",
+                      "name": "Bel Air",
+                      "postalCode": "90077"
+                    },
+                    {
+                      "@type": "Place",
+                      "name": "Westwood",
+                      "postalCode": "90024"
+                    },
+                    {
+                      "@type": "Place",
+                      "name": "West Los Angeles",
+                      "postalCode": "90064"
+                    },
+                    {
+                      "@type": "Place",
+                      "name": "Culver City",
+                      "postalCode": "90232"
+                    },
+                    {
+                      "@type": "Place",
+                      "name": "Culver City",
+                      "postalCode": "90230"
+                    },
+                    {
+                      "@type": "Place",
+                      "name": "La Cañada Flintridge",
+                      "postalCode": "91011"
+                    },
+                    {
+                      "@type": "Place",
+                      "name": "San Marino",
+                      "postalCode": "91108"
+                    },
+                    {
+                      "@type": "Place",
+                      "name": "South Pasadena",
+                      "postalCode": "91030"
+                    },
+                    {
+                      "@type": "Place",
+                      "name": "Pasadena",
+                      "postalCode": "91105"
+                    },
+                    {
+                      "@type": "Place",
+                      "name": "Pasadena",
+                      "postalCode": "91106"
                     }
                   ]
                 }

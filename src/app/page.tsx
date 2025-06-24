@@ -24,12 +24,13 @@ export default function Home() {
         <div className="container flex h-16 items-center">
           <div className="mr-8">
             <h1 className="text-2xl font-bold">Riyad Shauk</h1>
-            <p className="text-sm text-muted-foreground">Computer Science & Programming Tutor</p>
+            <p className="text-sm text-muted-foreground">Private Programming & Computer Science Tutor</p>
           </div>
           <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
             <nav className="flex items-center space-x-6 text-sm font-medium">
               <a href="#about" className="transition-colors hover:text-foreground/80">About</a>
               <a href="#services" className="transition-colors hover:text-foreground/80">Services</a>
+              <a href="#areas" className="transition-colors hover:text-foreground/80">Areas Served</a>
               <a href="#testimonials" className="transition-colors hover:text-foreground/80">Testimonials</a>
               <a href="#reviews" className="transition-colors hover:text-foreground/80">Reviews</a>
               <Button asChild>
@@ -49,12 +50,13 @@ export default function Home() {
             className="w-28 h-28 rounded-full object-cover border-4 border-primary shadow mb-6"
           />
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-            Computer Science &
-            <span className="text-primary block">Programming Tutor</span>
+            Learn to Code with a
+            <span className="text-primary block">Patient, Real-World Tutor</span>
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto">
-            Expert tutoring in computer science, programming, LeetCode problems, and SWE interview preparation. 
-            Available in Los Angeles (from Santa Monica to Pasadena) and remotely. Master algorithms, data structures, and coding fundamentals.
+            I offer 1-on-1 tutoring in programming and computer science for kids, teens, college students, and adult learners. 
+            Whether you're just getting started or need help with university-level coursework, I'll help you build confidence and real understanding. 
+            Available in Los Angeles (Beverly Hills, Santa Monica, Brentwood, Pacific Palisades, Bel Air, Westwood, West LA, Culver City, La Cañada, San Marino, South Pasadena, Pasadena) and online.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
@@ -72,7 +74,7 @@ export default function Home() {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">About Me</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Experienced software engineer and educator helping students master computer science and programming
+            Experienced software engineer and patient educator helping students of all ages master programming and computer science
           </p>
         </div>
         
@@ -85,7 +87,7 @@ export default function Home() {
             />
             <h3 className="text-2xl font-semibold mb-4">My Approach</h3>
             <p className="text-muted-foreground mb-6">
-              I combine industry experience with proven teaching methods to help students excel in computer science. My approach focuses on:
+              I combine industry experience with proven teaching methods to help students of all ages excel in programming. My approach focuses on:
             </p>
             <ul className="space-y-3">
               <li className="flex items-start">
@@ -156,7 +158,7 @@ export default function Home() {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Tutoring Services</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive computer science and programming tutoring designed to accelerate your learning
+            Comprehensive programming and computer science tutoring designed to meet you where you are and help you succeed
           </p>
         </div>
         
@@ -197,6 +199,8 @@ export default function Home() {
               <ul className="text-sm text-muted-foreground space-y-2">
                 <li>• Mock technical interviews</li>
                 <li>• Resume & portfolio review</li>
+                <li>• System design practice</li>
+                <li>• Behavioral interview coaching</li>
               </ul>
             </CardContent>
           </Card>
@@ -206,21 +210,183 @@ export default function Home() {
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-2xl">📚</span>
               </div>
-              <CardTitle>Programming Fundamentals</CardTitle>
+              <CardTitle>Computer Science Fundamentals</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">
-                Build strong programming foundations with personalized instruction. 
-                Master data structures, programming languages, and software development concepts.
+                Build a strong foundation in computer science concepts, 
+                data structures, and programming principles.
               </p>
               <ul className="text-sm text-muted-foreground space-y-2">
                 <li>• Data structures & algorithms</li>
-                <li>• Programming language mastery</li>
-                <li>• Software development principles</li>
-                <li>• Code review & best practices</li>
+                <li>• Programming languages</li>
+                <li>• Software engineering principles</li>
+                <li>• Best practices & design patterns</li>
               </ul>
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      {/* Areas Served Section */}
+      <section id="areas" className="container px-4 py-24 mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Areas Served</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            In-person tutoring available in Los Angeles' most prestigious neighborhoods
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <CardTitle className="text-lg">Beverly Hills</CardTitle>
+              <p className="text-sm text-muted-foreground">90210, 90211, 90212</p>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                In-person tutoring available
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <CardTitle className="text-lg">Santa Monica</CardTitle>
+              <p className="text-sm text-muted-foreground">90402, 90401, 90403, 90405</p>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                In-person tutoring available
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <CardTitle className="text-lg">Brentwood</CardTitle>
+              <p className="text-sm text-muted-foreground">90049</p>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                In-person tutoring available
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <CardTitle className="text-lg">Pacific Palisades</CardTitle>
+              <p className="text-sm text-muted-foreground">90272</p>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                In-person tutoring available
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <CardTitle className="text-lg">Bel Air</CardTitle>
+              <p className="text-sm text-muted-foreground">90077</p>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                In-person tutoring available
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <CardTitle className="text-lg">Westwood</CardTitle>
+              <p className="text-sm text-muted-foreground">90024</p>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                In-person tutoring available
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <CardTitle className="text-lg">West Los Angeles</CardTitle>
+              <p className="text-sm text-muted-foreground">90064</p>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                In-person tutoring available
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <CardTitle className="text-lg">Culver City</CardTitle>
+              <p className="text-sm text-muted-foreground">90232, 90230</p>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                In-person tutoring available
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <CardTitle className="text-lg">La Cañada Flintridge</CardTitle>
+              <p className="text-sm text-muted-foreground">91011</p>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                In-person tutoring available
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <CardTitle className="text-lg">San Marino</CardTitle>
+              <p className="text-sm text-muted-foreground">91108</p>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                In-person tutoring available
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <CardTitle className="text-lg">South Pasadena</CardTitle>
+              <p className="text-sm text-muted-foreground">91030</p>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                In-person tutoring available
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <CardTitle className="text-lg">Pasadena</CardTitle>
+              <p className="text-sm text-muted-foreground">91105, 91106</p>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                In-person tutoring available
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+        
+        <div className="mt-12 text-center">
+          <p className="text-sm text-muted-foreground">
+            <strong>Remote tutoring available worldwide</strong> - Same premium quality, flexible scheduling
+          </p>
         </div>
       </section>
 
@@ -253,7 +419,7 @@ export default function Home() {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Get Started Today</h2>
           <p className="text-lg text-primary-foreground/80 max-w-3xl mx-auto">
-            Ready to improve your programming skills? Contact me to schedule your first session.
+            Ready to build your programming skills? Contact me to schedule your first session.
           </p>
         </div>
         
@@ -351,7 +517,7 @@ export default function Home() {
             <div>
               <h3 className="text-xl font-semibold mb-4">Riyad Shauk</h3>
               <p className="text-muted-foreground mb-4">
-                Professional computer science and programming tutor dedicated to helping students achieve their career goals.
+                Patient, experienced programming tutor dedicated to helping students of all ages build confidence and succeed in computer science.
               </p>
             </div>
             
@@ -370,7 +536,7 @@ export default function Home() {
               <div className="space-y-2 text-muted-foreground">
                 <p>Email: riyad.shauk@gmail.com</p>
                 <p>Phone: (310) 866-6284</p>
-                <p>Los Angeles (90402 Santa Monica, 90042 Highland Park) & Remote Sessions</p>
+                <p>Los Angeles (Beverly Hills 90210-12, Santa Monica 90401-05, Brentwood 90049, Pacific Palisades 90272, Bel Air 90077, Westwood 90024, West LA 90064, Culver City 90230-32, La Cañada 91011, San Marino 91108, South Pasadena 91030, Pasadena 91105-06) & Remote Sessions</p>
                 <p>Rate: $150/hour (in person) or $100/hour (remote)</p>
               </div>
             </div>
