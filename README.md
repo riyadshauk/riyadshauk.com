@@ -13,6 +13,7 @@ A modern, SEO-optimized Next.js website for computer science tutoring services, 
 - **Responsive**: Works seamlessly on desktop and mobile devices
 - **Photo Uploads**: Reviewers can optionally upload photos with their reviews
 - **Local SEO**: Optimized for Los Angeles area
+- **Environment Management**: Support for multiple environments with special character handling
 
 ## Tech Stack
 
@@ -22,6 +23,7 @@ A modern, SEO-optimized Next.js website for computer science tutoring services, 
 - **Database**: PostgreSQL with Drizzle ORM
 - **Package Manager**: pnpm
 - **File Uploads**: Local disk storage with Next.js API routes
+- **Environment**: Zod validation with multi-environment support
 
 ## Getting Started
 
@@ -46,12 +48,11 @@ A modern, SEO-optimized Next.js website for computer science tutoring services, 
 
 3. **Setup environment variables**
    ```bash
-   # Copy the example environment file
-   cp env.example .env.local
+   # Create environment file from template
+   pnpm run env:create:local
    
-   # Edit .env.local with your database settings
-   # For local development with no password:
-   DATABASE_URL=postgresql://postgres@localhost:5432/riyadshauk_tutoring
+   # Or manually copy and edit
+   cp env.example .env.local
    ```
 
 4. **Setup database**
@@ -77,21 +78,81 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Environment Configuration
 
-The application uses environment variables for configuration. Copy `env.example` to `.env.local` and customize as needed:
+The application supports multiple environment files with automatic special character handling:
+
+### Environment Files
+
+- `.env` - Base environment variables (loaded first)
+- `.env.local` - Local development overrides (loaded in development)
+- `.env.prod` - Production environment (loaded in production)
+
+### Environment Variables
+
+The application uses individual database components for better special character support:
 
 ```bash
-# Database configuration
-DB_USER=postgres
-# DB_PASSWORD=  # don't define if no password
+# Database configuration (recommended for special characters)
+DB_USER=riyadshauk_user
+DB_PASSWORD=my@complex#password$2025
 DB_NAME=riyadshauk_tutoring
 DB_HOST=localhost
 DB_PORT=5432
-DATABASE_URL=postgresql://postgres@localhost:5432/riyadshauk_tutoring
 
-# Email configuration (for future features)
+# Environment
+NODE_ENV=development
+
+# Email configuration (optional)
 EMAIL_USER=your-email@gmail.com
 EMAIL_PASS=your-app-password
 ```
+
+### Special Character Support
+
+The system automatically handles special characters in database credentials:
+
+- **Passwords**: Supports `@`, `#`, `$`, `%`, `&`, `+`, `=`, etc.
+- **Usernames**: Supports email addresses and special characters
+- **Hosts**: Supports domain names with special characters
+- **Automatic Encoding**: Special characters are URL-encoded when constructing the DATABASE_URL
+
+### Environment Management Commands
+
+```bash
+# Validate environment files
+pnpm run env:validate
+
+# Show environment information
+pnpm run env:info
+
+# Create environment files from templates
+pnpm run env:create:local
+pnpm run env:create:prod
+
+# Test database connection
+pnpm run env:test
+```
+
+### Manual Environment Setup
+
+If you prefer to set up environment files manually:
+
+1. **Development** (`.env.local`):
+   ```bash
+   # Copy template
+   cp env.example .env.local
+   
+   # Edit with your settings
+   nano .env.local
+   ```
+
+2. **Production** (`.env.prod`):
+   ```bash
+   # Copy production template
+   cp env.prod.example .env.prod
+   
+   # Edit with production settings
+   nano .env.prod
+   ```
 
 ## Database Management
 
@@ -132,7 +193,7 @@ The `scripts/setup-database.sh` script automatically:
 - Detects your operating system (macOS or Linux)
 - Installs PostgreSQL if needed
 - Creates database user and database
-- Sets up environment variables
+- Sets up environment variables with special character support
 - Runs initial migrations
 
 ## Project Structure
@@ -164,6 +225,7 @@ riyadshauk.com-2025/
 │   │   ├── index.ts          # Database client setup
 │   │   └── schema.ts         # Database schema definition
 │   └── lib/                  # Utility functions
+│       ├── env.ts            # Environment configuration with validation
 │       └── utils.ts          # Helper functions
 ├── public/                   # Static assets
 │   ├── uploads/             # User uploaded photos
@@ -175,10 +237,12 @@ riyadshauk.com-2025/
 │   ├── 0001_messy_rick_jones.sql
 │   └── meta/               # Migration metadata
 ├── scripts/                 # Setup and utility scripts
-│   └── setup-database.sh   # Cross-platform database setup
+│   ├── setup-database.sh   # Cross-platform database setup
+│   └── env-helper.sh       # Environment management utilities
 ├── components.json         # ShadCN UI configuration
 ├── drizzle.config.ts       # Drizzle ORM configuration
 ├── env.example             # Environment variables template
+├── env.prod.example        # Production environment template
 ├── next.config.ts          # Next.js configuration
 ├── package.json            # Dependencies and scripts
 ├── tailwind.config.ts      # Tailwind CSS configuration

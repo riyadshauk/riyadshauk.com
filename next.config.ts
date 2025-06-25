@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Load environment variables
+  experimental: {
+    // Enable experimental features if needed
+  },
 };
 
 export default nextConfig;

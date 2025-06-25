@@ -9,7 +9,12 @@
     "lint": "next lint",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "env:validate": "./scripts/env-helper.sh validate",
+    "env:info": "./scripts/env-helper.sh info",
+    "env:create:local": "./scripts/env-helper.sh create local",
+    "env:create:prod": "./scripts/env-helper.sh create prod",
+    "env:test": "./scripts/env-helper.sh test"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -29,7 +34,8 @@
     "postgres": "^3.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.3.1"
+    "tailwind-merge": "^3.3.1",
+    "zod": "^3.25.67"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

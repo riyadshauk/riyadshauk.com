@@ -14,7 +14,7 @@ fi
 
 # Database configuration with environment variable fallbacks
 DB_USER="${DB_USER:-riyadshauk_user}"
-DB_PASSWORD="${DB_PASSWORD:-riyadshauk_secure_password_2024}"
+DB_PASSWORD="${DB_PASSWORD:-riyadshauk_secure_password_2025}"
 DB_NAME="${DB_NAME:-riyadshauk_tutoring}"
 DB_HOST="${DB_HOST:-localhost}"
 DB_PORT="${DB_PORT:-5432}"
@@ -53,8 +53,9 @@ execute_sql() {
 setup_database() {
     echo "🗄️  Creating database and user..."
     
-    # Create user
-    execute_sql "CREATE USER $DB_USER WITH PASSWORD '$DB_PASSWORD';" "User already exists"
+    # Create user (escape single quotes in password)
+    local escaped_password=$(echo "$DB_PASSWORD" | sed "s/'/''/g")
+    execute_sql "CREATE USER $DB_USER WITH PASSWORD '$escaped_password';" "User already exists"
     
     # Create database
     execute_sql "CREATE DATABASE $DB_NAME OWNER $DB_USER;" "Database already exists"
@@ -119,18 +120,23 @@ echo "📝 Updating .env.local file..."
 
 # Create or update .env.local with database configuration
 cat > .env.local << EOF
-# Database configuration
-# You can customize these values or leave them as defaults
+# Environment Configuration
+# Database configuration (individual components for special character support)
 DB_USER=$DB_USER
 DB_PASSWORD=$DB_PASSWORD
 DB_NAME=$DB_NAME
 DB_HOST=$DB_HOST
 DB_PORT=$DB_PORT
-DATABASE_URL=postgresql://$DB_USER:$DB_PASSWORD@$DB_HOST:$DB_PORT/$DB_NAME
 
-# Email configuration (if needed later)
+# Environment
+NODE_ENV=development
+
+# Email configuration (optional)
 EMAIL_USER=your-email@gmail.com
 EMAIL_PASS=your-app-password
+
+# Note: DATABASE_URL will be automatically constructed from the individual components
+# This approach supports special characters in passwords and usernames
 EOF
 
 echo "✅ Environment variables updated in .env.local"
@@ -171,7 +177,8 @@ echo ""
 echo "⚠️  Security Notes:"
 echo "   - .env.local is already in .gitignore and won't be committed"
 echo "   - Change the default password in production"
-echo "   - Consider using environment-specific .env files"
+echo "   - Consider using environment-specific .env files (.env.prod for production)"
+echo "   - Special characters in passwords are automatically URL-encoded"
 
 if [[ "$OS" == "linux" ]]; then
     echo "⚠️  Consider setting up a firewall and securing the database for production use!"
