@@ -1,0 +1,8 @@
+# Ignore test files from ESLint
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+
+# Ignore test setup files
+jest.setup.js 

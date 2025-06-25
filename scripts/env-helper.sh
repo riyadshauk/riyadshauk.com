@@ -2,6 +2,7 @@
 
 # Environment Helper Script
 # This script helps manage environment files and validate configurations
+# Uses Next.js conventions: .env.local (development), .env.production (production), .env (all)
 
 set -e
 
@@ -162,8 +163,8 @@ case "${1:-help}" in
         if [[ -n "$2" ]]; then
             validate_env_file "$2"
         else
-            # Validate all environment files
-            for env_file in .env .env.local .env.prod; do
+            # Validate all environment files (Next.js conventions)
+            for env_file in .env .env.local .env.production; do
                 if [[ -f "$env_file" ]]; then
                     validate_env_file "$env_file"
                     echo
@@ -175,8 +176,8 @@ case "${1:-help}" in
         if [[ -n "$2" ]]; then
             show_env_info "$2"
         else
-            # Show info for all environment files
-            for env_file in .env .env.local .env.prod; do
+            # Show info for all environment files (Next.js conventions)
+            for env_file in .env .env.local .env.production; do
                 if [[ -f "$env_file" ]]; then
                     show_env_info "$env_file"
                     echo
@@ -188,19 +189,19 @@ case "${1:-help}" in
         if [[ -n "$2" ]]; then
             case "$2" in
                 "local")
-                    create_env_file ".env.local" "env.example"
+                    create_env_file ".env.local" ".env.example"
                     ;;
-                "prod")
-                    create_env_file ".env.prod" "env.prod.example"
+                "production")
+                    create_env_file ".env.production" ".env.production.example"
                     ;;
                 *)
                     print_status $RED "❌ Unknown environment type: $2"
-                    print_status $YELLOW "Available types: local, prod"
+                    print_status $YELLOW "Available types: local, production"
                     exit 1
                     ;;
             esac
         else
-            print_status $YELLOW "Usage: $0 create <local|prod>"
+            print_status $YELLOW "Usage: $0 create <local|production>"
             exit 1
         fi
         ;;
@@ -213,23 +214,28 @@ case "${1:-help}" in
         fi
         ;;
     "help"|*)
-        echo "Environment Helper Script"
+        echo "Environment Helper Script (Next.js Conventions)"
         echo ""
         echo "Usage: $0 <command> [options]"
         echo ""
         echo "Commands:"
-        echo "  validate [file]     Validate environment file(s)"
-        echo "  info [file]         Show environment information"
-        echo "  create <local|prod> Create environment file from template"
-        echo "  test [file]         Test database connection"
-        echo "  help                Show this help message"
+        echo "  validate [file]           Validate environment file(s)"
+        echo "  info [file]               Show environment information"
+        echo "  create <local|production> Create environment file from template"
+        echo "  test [file]               Test database connection"
+        echo "  help                      Show this help message"
+        echo ""
+        echo "Next.js Environment Files:"
+        echo "  .env.local      - Development environment (ignored in production)"
+        echo "  .env.production - Production environment"
+        echo "  .env            - All environments (fallback)"
         echo ""
         echo "Examples:"
         echo "  $0 validate                    # Validate all env files"
         echo "  $0 validate .env.local         # Validate specific file"
-        echo "  $0 info .env.prod              # Show production env info"
+        echo "  $0 info .env.production        # Show production env info"
         echo "  $0 create local                # Create .env.local from template"
-        echo "  $0 create prod                 # Create .env.prod from template"
+        echo "  $0 create production           # Create .env.production from template"
         echo "  $0 test .env.local             # Test database connection"
         ;;
 esac 

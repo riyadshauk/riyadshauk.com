@@ -23,7 +23,7 @@ A modern, SEO-optimized Next.js website for computer science tutoring services, 
 - **Database**: PostgreSQL with Drizzle ORM
 - **Package Manager**: pnpm
 - **File Uploads**: Local disk storage with Next.js API routes
-- **Environment**: Zod validation with multi-environment support
+- **Environment**: Zod validation with Next.js environment conventions
 
 ## Getting Started
 
@@ -52,7 +52,7 @@ A modern, SEO-optimized Next.js website for computer science tutoring services, 
    pnpm run env:create:local
    
    # Or manually copy and edit
-   cp env.example .env.local
+   cp .env.example .env.local
    ```
 
 4. **Setup database**
@@ -78,13 +78,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Environment Configuration
 
-The application supports multiple environment files with automatic special character handling:
+The application uses Next.js environment conventions with automatic special character handling:
 
-### Environment Files
+### Environment Files (Next.js Conventions)
 
 - `.env` - Base environment variables (loaded first)
-- `.env.local` - Local development overrides (loaded in development)
-- `.env.prod` - Production environment (loaded in production)
+- `.env.local` - Local development overrides (loaded in development only)
+- `.env.production` - Production environment (loaded in production only)
 
 ### Environment Variables
 
@@ -126,7 +126,7 @@ pnpm run env:info
 
 # Create environment files from templates
 pnpm run env:create:local
-pnpm run env:create:prod
+pnpm run env:create:production
 
 # Test database connection
 pnpm run env:test
@@ -139,19 +139,19 @@ If you prefer to set up environment files manually:
 1. **Development** (`.env.local`):
    ```bash
    # Copy template
-   cp env.example .env.local
+   cp .env.example .env.local
    
    # Edit with your settings
    nano .env.local
    ```
 
-2. **Production** (`.env.prod`):
+2. **Production** (`.env.production`):
    ```bash
    # Copy production template
-   cp env.prod.example .env.prod
+   cp .env.production.example .env.production
    
    # Edit with production settings
-   nano .env.prod
+   nano .env.production
    ```
 
 ## Database Management
@@ -241,8 +241,8 @@ riyadshauk.com-2025/
 │   └── env-helper.sh       # Environment management utilities
 ├── components.json         # ShadCN UI configuration
 ├── drizzle.config.ts       # Drizzle ORM configuration
-├── env.example             # Environment variables template
-├── env.prod.example        # Production environment template
+├── .env.example            # Environment variables template
+├── .env.production.example # Production environment template
 ├── next.config.ts          # Next.js configuration
 ├── package.json            # Dependencies and scripts
 ├── tailwind.config.ts      # Tailwind CSS configuration
@@ -301,7 +301,7 @@ Submits a new review with optional photo upload.
 2. **Configure environment**
    ```bash
    # Update .env.local with production settings
-   cp env.example .env.local
+   cp .env.example .env.local
    # Edit with secure passwords and correct host settings
    ```
 

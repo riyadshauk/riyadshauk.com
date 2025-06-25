@@ -114,9 +114,9 @@ export function ReviewForm() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="review-role">Your Role</Label>
+              <Label id="review-role-label" htmlFor="review-role">Your Role</Label>
               <Select value={formData.role} onValueChange={(value) => handleInputChange("role", value)}>
-                <SelectTrigger>
+                <SelectTrigger id="review-role" aria-labelledby="review-role-label">
                   <SelectValue placeholder="Select your role" />
                 </SelectTrigger>
                 <SelectContent>
@@ -131,9 +131,9 @@ export function ReviewForm() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="review-subject">Subject Tutored</Label>
+              <Label id="review-subject-label" htmlFor="review-subject">Subject Tutored</Label>
               <Select value={formData.subject} onValueChange={(value) => handleInputChange("subject", value)}>
-                <SelectTrigger>
+                <SelectTrigger id="review-subject" aria-labelledby="review-subject-label">
                   <SelectValue placeholder="Select subject" />
                 </SelectTrigger>
                 <SelectContent>
@@ -151,9 +151,9 @@ export function ReviewForm() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="review-rating">Rating *</Label>
+            <Label id="review-rating-label" htmlFor="review-rating">Rating *</Label>
             <Select value={formData.rating} onValueChange={(value) => handleInputChange("rating", value)} required>
-              <SelectTrigger>
+              <SelectTrigger id="review-rating" aria-labelledby="review-rating-label">
                 <SelectValue placeholder="Select rating" />
               </SelectTrigger>
               <SelectContent>

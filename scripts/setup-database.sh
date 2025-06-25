@@ -3,6 +3,7 @@
 # Unified setup script for PostgreSQL database
 # This script detects the OS and sets up PostgreSQL for riyadshauk.com
 # Works on macOS (with Homebrew) and Linux/Raspberry Pi
+# Uses Next.js environment conventions: .env.local (development), .env.production (production)
 
 set -e
 
@@ -120,7 +121,7 @@ echo "📝 Updating .env.local file..."
 
 # Create or update .env.local with database configuration
 cat > .env.local << EOF
-# Environment Configuration
+# Environment Configuration (Development)
 # Database configuration (individual components for special character support)
 DB_USER=$DB_USER
 DB_PASSWORD=$DB_PASSWORD
@@ -177,7 +178,7 @@ echo ""
 echo "⚠️  Security Notes:"
 echo "   - .env.local is already in .gitignore and won't be committed"
 echo "   - Change the default password in production"
-echo "   - Consider using environment-specific .env files (.env.prod for production)"
+echo "   - Use .env.production for production environment"
 echo "   - Special characters in passwords are automatically URL-encoded"
 
 if [[ "$OS" == "linux" ]]; then

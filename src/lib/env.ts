@@ -20,25 +20,6 @@ const envSchema = z.object({
   EMAIL_PASS: z.string().optional(),
 });
 
-// Function to load environment variables based on NODE_ENV
-function loadEnvConfig() {
-  const nodeEnv = process.env.NODE_ENV || "development";
-  
-  // Load environment files in order of precedence
-  if (nodeEnv === "production") {
-    // In production, load .env.prod first, then .env
-    require("dotenv").config({ path: ".env.prod" });
-    require("dotenv").config({ path: ".env" });
-  } else {
-    // In development, load .env.local first, then .env
-    require("dotenv").config({ path: ".env.local" });
-    require("dotenv").config({ path: ".env" });
-  }
-}
-
-// Load environment configuration
-loadEnvConfig();
-
 // Parse and validate environment variables
 function parseEnv() {
   try {
