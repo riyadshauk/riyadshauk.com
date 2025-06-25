@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Image from "next/image";
 
 export function ReviewForm() {
   const [formData, setFormData] = useState({
@@ -173,7 +174,7 @@ export function ReviewForm() {
               onChange={(e) => handleInputChange("review", e.target.value)}
               required
               rows={4}
-              placeholder="Share your experience with Riyad&#39;s tutoring. What did you learn? How did it help you? What would you recommend to others?"
+              placeholder="Share your experience with Riyad&apos;s tutoring. What did you learn? How did it help you? What would you recommend to others?"
               className="min-h-[120px]"
             />
           </div>
@@ -187,9 +188,11 @@ export function ReviewForm() {
               onChange={handlePhotoChange}
             />
             {photoPreview && (
-              <img
+              <Image
                 src={photoPreview}
                 alt="Photo preview"
+                width={80}
+                height={80}
                 className="w-20 h-20 rounded-full object-cover border mt-2"
               />
             )}

@@ -8,6 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://riyadshauk.com'),
   title: "Riyad Shauk - Private Programming & Computer Science Tutor | Kids to Adults | Los Angeles (90210, 90402, 90049, 90272, 90077, 90024, 90064, 90230-32, 91011, 91108, 91030, 91105-06) & Online | riyadshauk.com",
   description: "Patient, experienced programming tutor helping students of all ages build confidence in coding and computer science. From elementary school logic to advanced algorithms, I offer personalized 1-on-1 tutoring in Los Angeles (Beverly Hills, Santa Monica, Brentwood, Pacific Palisades, Bel Air, Westwood, West LA, Culver City, La Cañada, San Marino, South Pasadena, Pasadena) and online.",
   keywords: [

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 import type { Review } from "@/db/schema";
 
 export function ReviewsDisplay() {
@@ -79,9 +80,11 @@ export function ReviewsDisplay() {
           <CardContent className="pt-6">
             <div className="flex items-center mb-4">
               {review.photoUrl ? (
-                <img
+                <Image
                   src={review.photoUrl}
                   alt={review.name + " photo"}
+                  width={48}
+                  height={48}
                   className="w-12 h-12 rounded-full object-cover border-2 border-primary mr-4"
                 />
               ) : (

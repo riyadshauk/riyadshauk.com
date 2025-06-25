@@ -120,3 +120,130 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Mobile-specific improvements */
+@layer utilities {
+  /* Improved touch targets for mobile */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Smooth scrolling for mobile */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Prevent zoom on input focus for iOS */
+  @media screen and (max-width: 768px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+  }
+  
+  /* Better mobile card interactions */
+  @media (hover: none) and (pointer: coarse) {
+    .card-hover {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .card-hover:active {
+      transform: scale(0.98);
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+  }
+  
+  /* Mobile-optimized button sizes */
+  @media screen and (max-width: 640px) {
+    .mobile-button {
+      padding: 12px 24px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+  
+  /* Improved mobile navigation */
+  @media screen and (max-width: 640px) {
+    .mobile-nav-item {
+      padding: 16px 0;
+      font-size: 16px;
+      border-bottom: 1px solid hsl(var(--border));
+    }
+    
+    .mobile-nav-item:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  /* Mobile-optimized spacing */
+  @media screen and (max-width: 640px) {
+    .mobile-section {
+      padding: 3rem 1rem;
+    }
+    
+    .mobile-container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  
+  /* Better mobile form inputs */
+  @media screen and (max-width: 640px) {
+    .mobile-input {
+      padding: 12px 16px;
+      font-size: 16px;
+      border-radius: 8px;
+    }
+    
+    .mobile-textarea {
+      padding: 12px 16px;
+      font-size: 16px;
+      border-radius: 8px;
+      min-height: 120px;
+    }
+  }
+  
+  /* Mobile-optimized grid layouts */
+  @media screen and (max-width: 640px) {
+    .mobile-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+  
+  /* Improved mobile typography */
+  @media screen and (max-width: 640px) {
+    .mobile-text {
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+    }
+    
+    .mobile-heading {
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+  }
+  
+  /* Mobile-optimized images */
+  @media screen and (max-width: 640px) {
+    .mobile-image {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
+  /* Better mobile scrolling */
+  @media screen and (max-width: 640px) {
+    .mobile-scroll {
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
+  }
+  
+  /* Mobile-optimized shadows */
+  @media screen and (max-width: 640px) {
+    .mobile-shadow {
+      box-shadow: 0 2px 4px -1px rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+    }
+  }
+}
