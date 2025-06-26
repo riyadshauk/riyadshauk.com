@@ -9,9 +9,9 @@ set -e
 
 # Configuration
 REPO_OWNER="your-github-username"
-REPO_NAME="riyadshauk.com-2025"
+REPO_NAME="riyadshauk.com"
 BRANCH="main"
-DEPLOY_DIR="/home/riyad/repos/riyadshauk.com-2025"
+DEPLOY_DIR="/home/riyad/repos/riyadshauk.com"
 BACKUP_DIR="/home/riyad/backups/riyadshauk.com"
 LOG_FILE="/home/riyad/logs/riyadshauk-deploy.log"
 GITHUB_TOKEN="${GITHUB_TOKEN:-}"  # Set this as environment variable
@@ -370,7 +370,7 @@ case "${1:-deploy}" in
         echo "  GITHUB_TOKEN    GitHub personal access token (required)"
         echo ""
         echo "Cron Job Example:"
-        echo "  */15 * * * * /home/riyad/repos/riyadshauk.com-2025/scripts/deploy.sh deploy"
+        echo "  */15 * * * * /home/riyad/repos/riyadshauk.com/scripts/deploy.sh deploy"
         echo ""
         echo "Setup Instructions:"
         echo "  1. Set GITHUB_TOKEN: export GITHUB_TOKEN=your_token"

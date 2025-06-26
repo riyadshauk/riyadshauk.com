@@ -4,7 +4,7 @@ module.exports = {
       name: 'riyadshauk.com-nextjs',
       script: 'npm',
       args: 'start',
-      cwd: '/home/riyad/repos/riyadshauk.com-2025',
+      cwd: '/home/riyad/repos/riyadshauk.com',
       env: {
         NODE_ENV: 'production',
         PORT: 3000

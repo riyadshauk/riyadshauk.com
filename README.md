@@ -38,7 +38,7 @@ A modern, SEO-optimized Next.js website for computer science tutoring services, 
 1. **Clone the repository**
    ```bash
    git clone <your-repo-url>
-   cd riyadshauk.com-2025
+   cd riyadshauk.com
    ```
 
 2. **Install dependencies**
@@ -199,7 +199,7 @@ The `scripts/setup-database.sh` script automatically:
 ## Project Structure
 
 ```
-riyadshauk.com-2025/
+riyadshauk.com/
 ├── src/
 │   ├── app/                    # Next.js App Router
 │   │   ├── api/               # API routes
