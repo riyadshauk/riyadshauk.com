@@ -30,6 +30,15 @@ export const metadata: Metadata = {
     "aws route53 setup",
     "cloud-native development",
     "serverless architecture consultant",
+    "python developer los angeles",
+    "django consultant",
+    "golang developer",
+    "docker consultant",
+    "nginx configuration",
+    "redis consultant",
+    "linux server administration",
+    "microservices development",
+    "backend api development",
     
     // Additional Freelance/Independent Keywords
     "freelance web developer",

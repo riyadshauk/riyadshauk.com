@@ -217,11 +217,11 @@ export default function ConsultingPage() {
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-4 mobile-heading">Technology Stack</h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto mobile-text">
-            Modern, proven technologies for building robust web applications
+            Modern, proven technologies for building robust web applications & APIs
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 mobile-grid">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6 sm:gap-8 mobile-grid">
           <Card className="text-center hover:shadow-lg transition-shadow card-hover mobile-shadow">
             <CardHeader>
               <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
@@ -302,6 +302,20 @@ export default function ConsultingPage() {
             <CardContent>
               <p className="text-sm text-muted-foreground mobile-text">
                 AWS (Lambda, SQS, DynamoDB, EC2, Route53) for scalable cloud-native solutions
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="text-center hover:shadow-lg transition-shadow card-hover mobile-shadow">
+            <CardHeader>
+              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span className="text-3xl">🛠️</span>
+              </div>
+              <CardTitle className="text-base sm:text-lg mobile-heading">Also Comfortable With</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground mobile-text">
+                Python + Django, Golang, Docker, Nginx, Redis, Linux server administration
               </p>
             </CardContent>
           </Card>
