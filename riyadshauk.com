@@ -26,6 +26,19 @@ server {
         proxy_read_timeout 86400;
     }
 
+    location /resume-tailor/ {
+        proxy_pass http://localhost:8080/;
+	proxy_read_timeout 300;  # Increase timeout to 5 minutes
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        # Optional, if the Go app needs absolute paths rewritten
+        rewrite ^/resume-tailor(/.*)$ $1 break;
+    }
+
     # Serve static files directly
     location /_next/static/ {
         proxy_pass http://localhost:3000;
