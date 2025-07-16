@@ -15,6 +15,13 @@
       "when": 1750717642618,
       "tag": "0001_messy_rick_jones",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1752693915626,
+      "tag": "0002_red_christian_walker",
+      "breakpoints": true
     }
   ]
 }

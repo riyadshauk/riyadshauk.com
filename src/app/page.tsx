@@ -48,6 +48,7 @@ export default function Home() {
             <a href="#areas" className="transition-colors hover:text-foreground/80">Areas Served</a>
             <a href="#testimonials" className="transition-colors hover:text-foreground/80">Testimonials</a>
             <a href="#reviews" className="transition-colors hover:text-foreground/80">Reviews</a>
+            <a href="/messaging" className="transition-colors hover:text-foreground/80">Messaging</a>
             <Button asChild>
               <a href="#contact">Contact</a>
             </Button>
@@ -103,6 +104,13 @@ export default function Home() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Reviews
+              </a>
+              <a 
+                href="/messaging" 
+                className="block py-3 text-base font-medium transition-colors hover:text-foreground/80 mobile-nav-item"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Messaging
               </a>
               <a 
                 href="https://github.com/riyadshauk/riyadshauk.com" 

@@ -73,6 +73,61 @@ fi
 
 echo "✅ Prerequisites check passed"
 
+# Database setup section
+echo "🗄️  Setting up database and permissions..."
+
+# Check if PostgreSQL is accessible
+if ! psql -U postgres -c "SELECT 1;" > /dev/null 2>&1; then
+    echo "❌ Cannot connect to PostgreSQL as postgres user"
+    echo "   Make sure PostgreSQL is running and postgres user is accessible"
+    exit 1
+fi
+
+# Create user if it doesn't exist
+echo "👤 Creating database user..."
+if ! psql -U postgres -c "SELECT 1 FROM pg_user WHERE usename = '$DB_USER';" | grep -q "1 row"; then
+    psql -U postgres -c "CREATE USER $DB_USER WITH PASSWORD '$DB_PASSWORD' CREATEDB;"
+    echo "✅ Database user created"
+else
+    echo "ℹ️  Database user already exists"
+fi
+
+# Create database if it doesn't exist
+echo "🗃️  Creating database..."
+if ! psql -U postgres -c "SELECT 1 FROM pg_database WHERE datname = '$DB_NAME';" | grep -q "1 row"; then
+    psql -U postgres -c "CREATE DATABASE $DB_NAME OWNER $DB_USER;"
+    echo "✅ Database created"
+else
+    echo "ℹ️  Database already exists"
+fi
+
+# Grant permissions
+echo "🔐 Setting up permissions..."
+psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE $DB_NAME TO $DB_USER;"
+psql -U postgres -c "GRANT CREATE ON DATABASE $DB_NAME TO $DB_USER;"
+
+# Connect to the database and grant schema permissions
+psql -U postgres -d "$DB_NAME" -c "GRANT CREATE ON SCHEMA public TO $DB_USER;"
+psql -U postgres -d "$DB_NAME" -c "GRANT ALL ON SCHEMA public TO $DB_USER;"
+
+# Grant permissions on drizzle schema
+echo " Setting up drizzle schema permissions..."
+psql -U postgres -d "$DB_NAME" -c "GRANT ALL ON SCHEMA drizzle TO $DB_USER;" 2>/dev/null || echo "ℹ️  Drizzle schema doesn't exist yet, will be created during migration"
+psql -U postgres -d "$DB_NAME" -c "GRANT CREATE ON SCHEMA public TO $DB_USER;"
+psql -U postgres -d "$DB_NAME" -c "GRANT ALL ON SCHEMA public TO $DB_USER;"
+
+echo "✅ Database and permissions setup complete"
+
+# Test connection with the new user
+echo "🔍 Testing database connection..."
+if ! psql -U "$DB_USER" -d "$DB_NAME" -c "SELECT 1;" > /dev/null 2>&1; then
+    echo "❌ Cannot connect to database with user $DB_USER"
+    echo "   Check your database credentials and permissions"
+    exit 1
+fi
+
+echo "✅ Database connection test passed"
+
 # Generate and run migrations
 echo "🔄 Generating database migrations..."
 if pnpm run db:generate; then
