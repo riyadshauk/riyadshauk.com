@@ -39,7 +39,7 @@ export default function NavBar() {
           <Link href="/#projects" className="transition-colors hover:text-foreground/80">Projects</Link>
           <Link href="/#testimonials" className="transition-colors hover:text-foreground/80">Testimonials</Link>
           <Link href="/#reviews" className="transition-colors hover:text-foreground/80">Reviews</Link>
-          <Link href="/messaging" className="transition-colors hover:text-foreground/80">Messaging</Link>
+          <Link href="/messaging" className="transition-colors hover:text-foreground/80">Message Me!</Link>
           <Button asChild>
             <Link href="/#contact">Contact</Link>
           </Button>

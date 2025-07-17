@@ -59,47 +59,6 @@ export default function Home() {
         </div>
         
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 mobile-grid">
-          {/* Tutoring Card */}
-          <Card className="hover:shadow-lg transition-shadow h-full card-hover mobile-shadow group">
-            <CardHeader>
-              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <span className="text-3xl">📚</span>
-              </div>
-              <CardTitle className="text-xl sm:text-2xl mobile-heading">Tutoring Services</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-6 text-base mobile-text">
-                1-on-1 programming and computer science tutoring for students of all ages. 
-                Build confidence and real understanding through hands-on practice.
-              </p>
-              <div className="space-y-3 mb-6">
-                <div className="flex items-start">
-                  <span className="text-primary mr-3 mt-1 text-lg">✓</span>
-                  <span className="text-sm sm:text-base mobile-text">LeetCode & Algorithm Practice</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-primary mr-3 mt-1 text-lg">✓</span>
-                  <span className="text-sm sm:text-base mobile-text">SWE Interview Preparation</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-primary mr-3 mt-1 text-lg">✓</span>
-                  <span className="text-sm sm:text-base mobile-text">Computer Science Fundamentals</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-primary mr-3 mt-1 text-lg">✓</span>
-                  <span className="text-sm sm:text-base mobile-text">Personalized Learning Paths</span>
-                </div>
-              </div>
-              <div className="space-y-2 text-sm text-muted-foreground mobile-text">
-                <p><strong>Available:</strong> Los Angeles (in-person) & Worldwide (remote)</p>
-                <p><strong>Rate:</strong> $150/hour (in-person) or $100/hour (remote)</p>
-              </div>
-              <Button asChild className="w-full mt-6 mobile-button">
-                <Link href="/tutoring">Learn More About Tutoring</Link>
-              </Button>
-            </CardContent>
-          </Card>
-          
           {/* Consulting Card */}
           <Card className="hover:shadow-lg transition-shadow h-full card-hover mobile-shadow group">
             <CardHeader>
@@ -137,6 +96,47 @@ export default function Home() {
               </div>
               <Button asChild className="w-full mt-6 mobile-button">
                 <Link href="/consulting">Learn More About Consulting</Link>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Tutoring Card */}
+          <Card className="hover:shadow-lg transition-shadow h-full card-hover mobile-shadow group">
+            <CardHeader>
+              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <span className="text-3xl">📚</span>
+              </div>
+              <CardTitle className="text-xl sm:text-2xl mobile-heading">Tutoring Services</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground mb-6 text-base mobile-text">
+                1-on-1 programming and computer science tutoring for students of all ages. 
+                Build confidence and real understanding through hands-on practice.
+              </p>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-start">
+                  <span className="text-primary mr-3 mt-1 text-lg">✓</span>
+                  <span className="text-sm sm:text-base mobile-text">LeetCode & Algorithm Practice</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-primary mr-3 mt-1 text-lg">✓</span>
+                  <span className="text-sm sm:text-base mobile-text">SWE Interview Preparation</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-primary mr-3 mt-1 text-lg">✓</span>
+                  <span className="text-sm sm:text-base mobile-text">Computer Science Fundamentals</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-primary mr-3 mt-1 text-lg">✓</span>
+                  <span className="text-sm sm:text-base mobile-text">Personalized Learning Paths</span>
+                </div>
+              </div>
+              <div className="space-y-2 text-sm text-muted-foreground mobile-text">
+                <p><strong>Available:</strong> Los Angeles (in-person) & Worldwide (remote)</p>
+                <p><strong>Rate:</strong> $150/hour (in-person) or $100/hour (remote)</p>
+              </div>
+              <Button asChild className="w-full mt-6 mobile-button">
+                <Link href="/tutoring">Learn More About Tutoring</Link>
               </Button>
             </CardContent>
           </Card>
@@ -301,8 +301,8 @@ export default function Home() {
                       <SelectValue placeholder="Select service type" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="tutoring">📚 Tutoring Services</SelectItem>
                       <SelectItem value="consulting">💼 Consulting Services</SelectItem>
+                      <SelectItem value="tutoring">📚 Tutoring Services</SelectItem>
                       <SelectItem value="both">Both - Not sure yet</SelectItem>
                     </SelectContent>
                   </Select>
@@ -387,8 +387,8 @@ export default function Home() {
             <div className="mt-8">
               <h4 className="text-lg font-semibold mb-4 mobile-heading">Service Rates</h4>
               <div className="space-y-2 text-primary-foreground/80 text-sm sm:text-base mobile-text">
-                <p>• Tutoring: $150/hour (in person) or $100/hour (remote)</p>
                 <p>• Consulting: Project-based with flexible terms</p>
+                <p>• Tutoring: $150/hour (in person) or $100/hour (remote)</p>
                 <p>• Free 15-minute consultation for both services</p>
               </div>
             </div>
@@ -417,12 +417,12 @@ export default function Home() {
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="tutoring-fundamentals">Tutoring - Computer Science & Programming</SelectItem>
-                      <SelectItem value="tutoring-algorithms">Tutoring - Data Structures & Algorithms</SelectItem>
-                      <SelectItem value="tutoring-interview">Tutoring - SWE Interview Prep</SelectItem>
                       <SelectItem value="consulting-mvp">Consulting - MVP Development</SelectItem>
                       <SelectItem value="consulting-webapp">Consulting - Web Application</SelectItem>
                       <SelectItem value="consulting-consulting">Consulting - Technical Consulting</SelectItem>
+                      <SelectItem value="tutoring-fundamentals">Tutoring - Computer Science & Programming</SelectItem>
+                      <SelectItem value="tutoring-algorithms">Tutoring - Data Structures & Algorithms</SelectItem>
+                      <SelectItem value="tutoring-interview">Tutoring - SWE Interview Prep</SelectItem>
                       <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
@@ -483,8 +483,8 @@ export default function Home() {
                 <p>Email: riyad.shauk@gmail.com</p>
                 <p>Phone: (310) 866-6284</p>
                 <p>Los Angeles (Beverly Hills 90210-12, Santa Monica 90401-05, Brentwood 90049, Pacific Palisades 90272, Bel Air 90077, Westwood 90024, West LA 90064, Culver City 90230-32, La Cañada 91011, San Marino 91108, South Pasadena 91030, Pasadena 91105-06) & Remote Sessions</p>
-                <p>Tutoring: $150/hour (in person) or $100/hour (remote)</p>
                 <p>Consulting: Project-based pricing</p>
+                <p>Tutoring: $150/hour (in person) or $100/hour (remote)</p>
               </div>
             </div>
           </div>
