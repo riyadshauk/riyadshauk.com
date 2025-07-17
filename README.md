@@ -76,6 +76,40 @@ A modern, SEO-optimized Next.js website for computer science tutoring services, 
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Troubleshooting
+
+### Build Errors
+
+If you encounter build errors, especially related to Next.js components or cached build artifacts, try clearing the build cache:
+
+```bash
+# Clear Next.js build cache
+rm -rf .next
+
+# Clear node modules cache (optional, but recommended for persistent issues)
+rm -rf node_modules/.cache
+
+# Reinstall dependencies (if cache clearing doesn't work)
+rm -rf node_modules pnpm-lock.yaml
+pnpm install
+```
+
+**Common Issues:**
+
+1. **`<Html> should not be imported outside of pages/_document`**: This error typically occurs when there are conflicting cached build artifacts between App Router and Pages Router. Clear the build cache as shown above.
+
+2. **Environment variable parsing errors**: Ensure your environment files follow the correct format and don't have extra spaces or quotes around values.
+
+3. **Database connection issues**: Verify your database is running and credentials are correct in your environment files.
+
+4. **Port conflicts**: If port 3000 is in use, Next.js will automatically try the next available port.
+
+### Development Issues
+
+- **Hot reload not working**: Try restarting the development server
+- **TypeScript errors**: Run `pnpm run type-check` to identify specific issues
+- **ESLint warnings**: The `.eslintignore` file is deprecated; consider migrating to the `ignores` property in `eslint.config.js`
+
 ## Environment Configuration
 
 The application uses Next.js environment conventions with automatic special character handling:
