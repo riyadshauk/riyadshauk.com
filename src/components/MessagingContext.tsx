@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useReducer, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useReducer, useEffect, ReactNode, useCallback } from 'react';
 import { useAuth, User } from './AuthContext';
 
 // Types - using User from AuthContext
@@ -185,7 +185,7 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  const fetchMessages = async (conversationId: string) => {
+  const fetchMessages = useCallback(async (conversationId: string) => {
     if (!authState.user) return;
 
     try {
@@ -206,9 +206,9 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
         payload: error instanceof Error ? error.message : 'Failed to fetch messages' 
       });
     }
-  };
+  }, [authState.user, dispatch]);
 
-  const fetchConversations = async () => {
+  const fetchConversations = useCallback(async () => {
     if (!authState.user) return;
 
     try {
@@ -229,9 +229,9 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
         payload: error instanceof Error ? error.message : 'Failed to fetch conversations' 
       });
     }
-  };
+  }, [authState.user, dispatch]);
 
-  const fetchUsers = async () => {
+  const fetchUsers = useCallback(async () => {
     // Only admins can fetch all users
     if (!authState.user || authState.user.role !== 'admin') return;
 
@@ -253,7 +253,7 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
         payload: error instanceof Error ? error.message : 'Failed to fetch users' 
       });
     }
-  };
+  }, [authState.user, dispatch]);
 
   // Auto-fetch conversations when user changes
   useEffect(() => {
@@ -300,14 +300,14 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
       dispatch({ type: 'SET_MESSAGES', payload: [] });
       dispatch({ type: 'SET_USERS', payload: [] });
     }
-  }, [authState.user]);
+  }, [authState.user, fetchConversations, fetchUsers, dispatch]);
 
   // Auto-fetch messages when conversation changes
   useEffect(() => {
     if (state.currentConversation && authState.user) {
       fetchMessages(state.currentConversation.id);
     }
-  }, [state.currentConversation, authState.user]);
+  }, [state.currentConversation, authState.user, fetchMessages]);
 
   const value: MessagingContextType = {
     state,

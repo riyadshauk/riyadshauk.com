@@ -7,13 +7,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import NavBar from "@/components/NavBar";
 
-export default function ConsultingPage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+export default function Consulting() {
+  // Removed: const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
@@ -30,17 +29,12 @@ export default function ConsultingPage() {
             className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover border-4 border-primary shadow-lg mb-6 mobile-image"
           />
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-6xl xl:text-7xl leading-tight mobile-heading">
-            Freelance Full Stack Developer
-            <span className="text-primary block mt-2">& Web Consulting</span>
+            Software Consulting
+            <span className="text-primary block mt-2">Let&apos;s build something amazing together</span>
           </h1>
           <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mobile-text">
-            Independent software engineer and freelance full-stack web developer in Los Angeles and remote worldwide. 
-            I build modern, scalable web applications using React, Next.js, TypeScript, and PostgreSQL. 
-            Specializing in helping startups and small businesses with custom web app development, MVP creation, and technical consulting.
-            Available in Beverly Hills (90210), Santa Monica (90402), Brentwood (90049), Pacific Palisades (90272), 
-            Bel Air (90077), Westwood (90024), West LA (90064), Culver City (90230-32), La Cañada (91011), 
-            San Marino (91108), South Pasadena (91030), Pasadena (91105-06) and remote projects worldwide. 
-            This website you're viewing was built from scratch using these technologies — I'd love to do the same for your project.
+            From MVPs to production applications, I help individuals and small teams bring their software ideas to life. 
+            Whether you&apos;re building a web app, mobile app, or automation tool, I&apos;m here to guide you through the process.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
             <Button size="lg" asChild className="w-full sm:w-auto text-base py-6 px-8 mobile-button touch-target">
@@ -243,7 +237,7 @@ export default function ConsultingPage() {
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-4 mobile-heading">Ready to Start Your Project?</h2>
           <p className="text-base sm:text-lg text-primary-foreground/80 max-w-3xl mx-auto mobile-text">
-            As an independent software engineer, I work directly with startups and small businesses to bring their web projects to life. Let's discuss your requirements and get started.
+            As an independent software engineer, I work directly with startups and small businesses to bring their web projects to life. Let&apos;s discuss your requirements and get started.
           </p>
         </div>
         

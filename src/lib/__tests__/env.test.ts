@@ -1,4 +1,4 @@
-import { env } from '../env';
+/* eslint-disable @typescript-eslint/no-require-imports */
 
 // Mock dotenv
 jest.mock('dotenv', () => ({

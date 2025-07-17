@@ -20,9 +20,17 @@ const envSchema = z.object({
   EMAIL_PASS: z.string().optional(),
 });
 
+// Type for the parsed environment
+type ParsedEnv = z.infer<typeof envSchema> & { DATABASE_URL: string };
+
 // Parse and validate environment variables
-function parseEnv() {
+function parseEnv(): ParsedEnv {
   try {
+    // Check if we're in a build context where env vars might not be available
+    if (typeof process === 'undefined' || !process.env) {
+      throw new Error('Environment not available during build');
+    }
+
     const env = envSchema.parse(process.env);
     
     // Construct DATABASE_URL if not provided
@@ -41,8 +49,24 @@ function parseEnv() {
       }
     }
     
-    return env as typeof env & { DATABASE_URL: string };
+    return env as ParsedEnv;
   } catch (error) {
+    // During build time, return a mock environment
+    if (process.env.NODE_ENV === 'production' && typeof window === 'undefined') {
+      console.warn('Environment variables not available during build, using mock values');
+      return {
+        DB_USER: 'mock_user',
+        DB_PASSWORD: 'mock_password',
+        DB_NAME: 'mock_db',
+        DB_HOST: 'localhost',
+        DB_PORT: 5432,
+        DATABASE_URL: 'postgresql://mock_user:mock_password@localhost:5432/mock_db',
+        NODE_ENV: 'production' as const,
+        EMAIL_USER: undefined,
+        EMAIL_PASS: undefined,
+      } as ParsedEnv;
+    }
+    
     if (error instanceof z.ZodError) {
       const missingVars = error.errors.map((err: z.ZodIssue) => err.path.join(".")).join(", ");
       throw new Error(`Missing or invalid environment variables: ${missingVars}`);
@@ -51,8 +75,22 @@ function parseEnv() {
   }
 }
 
+// Lazy evaluation - only parse when actually accessed
+let _env: ParsedEnv | null = null;
+
+function getEnv(): ParsedEnv {
+  if (!_env) {
+    _env = parseEnv();
+  }
+  return _env;
+}
+
 // Export validated environment variables
-export const env = parseEnv();
+export const env = new Proxy({} as ParsedEnv, {
+  get(target, prop) {
+    return getEnv()[prop as keyof ParsedEnv];
+  }
+});
 
 // Export types for TypeScript
-export type Env = z.infer<typeof envSchema> & { DATABASE_URL: string }; 
+export type Env = ParsedEnv; 

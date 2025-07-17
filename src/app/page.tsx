@@ -9,13 +9,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { ReviewForm } from "@/components/ReviewForm";
 import { ReviewsDisplay } from "@/components/ReviewsDisplay";
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import NavBar from "@/components/NavBar";
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // Removed: const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
@@ -32,12 +31,12 @@ export default function Home() {
             className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover border-4 border-primary shadow-lg mb-6 mobile-image"
           />
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-6xl xl:text-7xl leading-tight mobile-heading">
-            Hi, I'm Riyad
+            Hi, I&apos;m Riyad
             <span className="text-primary block mt-2">I help people learn and build with technology</span>
           </h1>
           <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mobile-text">
             From tutoring students to consulting on real-world software projects, I love solving problems. 
-            Whether you're learning to code or building something amazing, I'm here to help.
+            Whether you&apos;re learning to code or building something amazing, I&apos;m here to help.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
             <Button size="lg" asChild className="w-full sm:w-auto text-base py-6 px-8 mobile-button touch-target">
@@ -278,7 +277,7 @@ export default function Home() {
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-4 mobile-heading">Get in Touch</h2>
           <p className="text-base sm:text-lg text-muted-foreground mb-8 mobile-text">
-            Let's figure out how I can help. Just describe what you're working on — whether you need tutoring or tech guidance.
+            Let&apos;s figure out how I can help. Just describe what you&apos;re working on — whether you need tutoring or tech guidance.
           </p>
           
           <Card className="mobile-shadow">
@@ -296,7 +295,7 @@ export default function Home() {
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="service-type" className="text-sm sm:text-base mobile-text">I'm interested in</Label>
+                  <Label htmlFor="service-type" className="text-sm sm:text-base mobile-text">I&apos;m interested in</Label>
                   <Select name="service-type">
                     <SelectTrigger className="h-12 text-base mobile-input">
                       <SelectValue placeholder="Select service type" />
@@ -347,7 +346,7 @@ export default function Home() {
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-4 mobile-heading">Share Your Experience</h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto mobile-text">
-            Had a great experience with my tutoring or consulting? I'd love to hear about it! Submit a review below.
+            Had a great experience with my tutoring or consulting? I&apos;d love to hear about it! Submit a review below.
           </p>
         </div>
         
@@ -359,7 +358,7 @@ export default function Home() {
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-4 mobile-heading">Ready to Get Started?</h2>
           <p className="text-base sm:text-lg text-primary-foreground/80 max-w-3xl mx-auto mobile-text">
-            Whether you need tutoring to build your programming skills or consulting to bring your software project to life, let's discuss how I can help.
+            Whether you need tutoring to build your programming skills or consulting to bring your software project to life, let&apos;s discuss how I can help.
           </p>
         </div>
         

@@ -5,7 +5,6 @@ import { useMessaging } from './MessagingContext';
 import { useAuth } from './AuthContext';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Send, ArrowLeft, Users } from 'lucide-react';
 
@@ -61,8 +60,10 @@ export function Chat() {
     });
   };
 
-  const isOwnMessage = (message: any) => {
-    return message.senderId === authState.user?.id;
+  const isOwnMessage = (message: unknown) => {
+    if (typeof message !== 'object' || message === null) return false;
+    const msg = message as { senderId: string };
+    return msg.senderId === authState.user?.id;
   };
 
   if (!state.currentConversation) {

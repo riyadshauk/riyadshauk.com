@@ -125,9 +125,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         method: 'POST',
         credentials: 'include',
       });
-    } catch (error) {
+    } catch {
       // Even if logout fails on server, clear local state
-      console.error('Logout error:', error);
+      console.error('Logout error');
     }
     
     dispatch({ type: 'SET_USER', payload: null });
@@ -151,7 +151,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         } else {
           dispatch({ type: 'SET_USER', payload: null });
         }
-      } catch (error) {
+      } catch {
         dispatch({ type: 'SET_USER', payload: null });
       }
     };

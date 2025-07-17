@@ -17,7 +17,10 @@ const eslintConfig = [
       "**/*.spec.ts", 
       "**/*.spec.tsx",
       "jest.setup.js"
-    ]
+    ],
+    rules: {
+      '@typescript-eslint/no-unused-vars': ['error', { 'argsIgnorePattern': '^_', 'varsIgnorePattern': '^_' }]
+    },
   },
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];

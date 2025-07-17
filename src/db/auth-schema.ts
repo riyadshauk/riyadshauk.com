@@ -1,4 +1,4 @@
-import { pgTable, text, timestamp, integer, boolean, index, primaryKey } from "drizzle-orm/pg-core";
+import { pgTable, text, timestamp, index, boolean } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
 
 // Updated users table with authentication fields

@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { db } from "@/db";
 import { users } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { hashPassword } from "@/lib/auth";
 
-export async function POST(request: NextRequest) {
+export async function POST() {
   try {
     // Check if admin already exists
     const existingAdmin = await db.query.users.findFirst({
@@ -23,14 +23,14 @@ export async function POST(request: NextRequest) {
           .where(eq(users.id, existingAdmin.id))
           .returning();
         
-        const { passwordHash, ...adminWithoutPassword } = updatedAdmin[0];
+        const { passwordHash: _unused, ...adminWithoutPassword } = updatedAdmin[0];
         return NextResponse.json(
           { message: "Admin user updated successfully", user: adminWithoutPassword },
           { status: 200 }
         );
       }
       
-      const { passwordHash, ...adminWithoutPassword } = existingAdmin;
+      const { passwordHash: _unused, ...adminWithoutPassword } = existingAdmin;
       return NextResponse.json(
         { message: "Admin user already exists", user: adminWithoutPassword },
         { status: 200 }
@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
       isVerified: true,
     }).returning();
 
-    const { passwordHash, ...adminWithoutPassword } = adminUser[0];
+    const { passwordHash: _unused, ...adminWithoutPassword } = adminUser[0];
 
     return NextResponse.json(
       { 

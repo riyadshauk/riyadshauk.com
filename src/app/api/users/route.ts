@@ -46,7 +46,7 @@ export async function GET(request: NextRequest) {
       }
 
       // Return user without password
-      const { passwordHash, ...userWithoutPassword } = user;
+      const { passwordHash: _unused, ...userWithoutPassword } = user;
       return NextResponse.json(userWithoutPassword);
     }
 
@@ -71,7 +71,7 @@ export async function GET(request: NextRequest) {
       }
 
       // Return user without password
-      const { passwordHash, ...userWithoutPassword } = user;
+      const { passwordHash: _unused, ...userWithoutPassword } = user;
       return NextResponse.json(userWithoutPassword);
     }
 
@@ -88,7 +88,7 @@ export async function GET(request: NextRequest) {
     });
 
     // Return users without passwords
-    const usersWithoutPasswords = allUsers.map(({ passwordHash, ...user }) => user);
+    const usersWithoutPasswords = allUsers.map(({ passwordHash: _unused, ...user }) => user);
     return NextResponse.json(usersWithoutPasswords);
   } catch (error) {
     console.error("Error fetching users:", error);
@@ -148,7 +148,7 @@ export async function PUT(request: NextRequest) {
     }
 
     // Return user without password
-    const { passwordHash, ...userWithoutPassword } = updatedUser[0];
+    const { passwordHash: _unused, ...userWithoutPassword } = updatedUser[0];
     return NextResponse.json(userWithoutPassword);
   } catch (error) {
     if (error instanceof z.ZodError) {

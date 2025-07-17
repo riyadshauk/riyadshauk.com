@@ -9,13 +9,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { ReviewForm } from "@/components/ReviewForm";
 import { ReviewsDisplay } from "@/components/ReviewsDisplay";
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import NavBar from "@/components/NavBar";
 
-export default function TutoringPage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+export default function Tutoring() {
+  // Removed: const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">

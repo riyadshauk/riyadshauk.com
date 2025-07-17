@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { useMessaging } from './MessagingContext';
+import { useAuth } from './AuthContext';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -11,7 +11,7 @@ export function LoginForm() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const { loginUser, state } = useMessaging();
+  const { login, state } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,13 +19,13 @@ export function LoginForm() {
 
     setIsLoading(true);
     try {
-      await loginUser(email.trim(), name.trim());
+      await login(email.trim(), name.trim());
     } finally {
       setIsLoading(false);
     }
   };
 
-  if (state.currentUser) {
+  if (state.user) {
     return null; // Don't show login form if user is already logged in
   }
 

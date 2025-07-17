@@ -4,6 +4,24 @@ import { eq, and, gt } from "drizzle-orm";
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
 
+// Type definitions
+export interface User {
+  id: string;
+  email: string;
+  name: string;
+  role: string; // Database returns string, not union type
+  isVerified: boolean;
+  avatarUrl?: string | null;
+  lastLogin?: Date | null;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface AuthResult {
+  user: User;
+  session: { id: string; token: string; userId: string; expiresAt: string | Date; createdAt: string | Date };
+}
+
 // Password hashing utilities
 export function hashPassword(password: string): string {
   const salt = crypto.randomBytes(16).toString('hex');
@@ -35,7 +53,7 @@ export async function createSession(userId: string): Promise<string> {
   return token;
 }
 
-export async function validateSession(token: string): Promise<{ user: any; session: any } | null> {
+export async function validateSession(token: string): Promise<AuthResult | null> {
   const session = await db.query.sessions.findFirst({
     where: and(
       eq(sessions.token, token),
@@ -76,7 +94,7 @@ export async function cleanupExpiredSessions(): Promise<void> {
 }
 
 // Authentication middleware
-export async function getAuthenticatedUser(request: NextRequest): Promise<{ user: any; session: any } | null> {
+export async function getAuthenticatedUser(request: NextRequest): Promise<AuthResult | null> {
   const token = request.cookies.get('session')?.value;
 
   if (!token) {
@@ -112,7 +130,7 @@ export async function registerUser(email: string, name: string, password: string
 }
 
 // User login
-export async function loginUser(email: string, password: string): Promise<{ user: any; token: string }> {
+export async function loginUser(email: string, password: string): Promise<{ user: User; token: string }> {
   // Find user
   const user = await db.query.users.findFirst({
     where: eq(users.email, email),
@@ -159,19 +177,21 @@ export function clearSessionCookie(response: NextResponse): void {
 }
 
 // Authorization helpers
-export function isAdmin(user: any): boolean {
-  return user?.role === 'admin';
+export function isAdmin(user: User): boolean {
+  return user.role === 'admin';
 }
 
-export function isClient(user: any): boolean {
-  return user?.role === 'client';
+export function isClient(user: User): boolean {
+  return user.role === 'client';
 }
 
-export function canAccessConversation(user: any, conversation: any): boolean {
+export function canAccessConversation(user: User, conversation: unknown): boolean {
   if (isAdmin(user)) {
     return true; // Admin (tutor) can access all conversations
   }
   
   // Client can only access conversations they're a participant in
-  return conversation.participants?.some((p: any) => p.userId === user.id);
+  const conv = conversation as { participants?: { userId: string }[] };
+  const usr = user as { id?: string };
+  return conv.participants?.some((p) => p.userId === usr.id) ?? false;
 } 

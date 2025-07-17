@@ -1,22 +1,19 @@
 "use client";
 
 import React, { useState } from 'react';
-import { useMessaging } from './MessagingContext';
+import { Conversation, useMessaging } from './MessagingContext';
 import { useAuth } from './AuthContext';
 import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
-import { Separator } from './ui/separator';
 import { Plus, Users, User, LogOut } from 'lucide-react';
 
 export function ConversationList() {
   const { state, dispatch, fetchConversations } = useMessaging();
   const { state: authState, logout } = useAuth();
   const [isStartingConversation, setIsStartingConversation] = useState(false);
-  const [isAutoCreating, setIsAutoCreating] = useState(false);
 
-  const handleConversationClick = (conversation: any) => {
-    dispatch({ type: 'SET_CURRENT_CONVERSATION', payload: conversation });
+  const handleConversationClick = (conversation: Conversation) => {
+    dispatch({ type: 'SET_CURRENT_CONVERSATION', payload: conversation as Conversation });
   };
 
   const startConversationWithAdmin = async () => {
@@ -45,12 +42,13 @@ export function ConversationList() {
     }
   };
 
-  const getConversationName = (conversation: any) => {
-    if (conversation.name) return conversation.name;
+  const getConversationName = (conversation: unknown) => {
+    const conv = conversation as { name?: string; type: string; participants: { user: { id: string; name: string } }[] };
+    if (conv.name) return conv.name;
     
-    if (conversation.type === 'private') {
-      const otherParticipant = conversation.participants.find(
-        (p: any) => p.user.id !== authState.user?.id
+    if (conv.type === 'private') {
+      const otherParticipant = conv.participants.find(
+        (p: { user: { id: string } }) => p.user.id !== authState.user?.id
       );
       return otherParticipant?.user.name || 'Unknown User';
     }
@@ -58,10 +56,11 @@ export function ConversationList() {
     return 'Group Chat';
   };
 
-  const getConversationPreview = (conversation: any) => {
+  const getConversationPreview = (conversation: unknown) => {
+    const conv = conversation as { type: string };
     // This would typically show the last message
     // For now, just show the conversation type
-    return conversation.type === 'private' ? 'Private conversation' : 'Group conversation';
+    return conv.type === 'private' ? 'Private conversation' : 'Group conversation';
   };
 
   const formatDate = (dateString: string) => {
