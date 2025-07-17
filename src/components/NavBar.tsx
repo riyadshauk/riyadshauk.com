@@ -34,8 +34,8 @@ export default function NavBar() {
         {/* Desktop Navigation */}
         <div className="hidden sm:flex items-center space-x-6 text-sm font-medium">
           <Link href="/" className="transition-colors hover:text-foreground/80">Home</Link>
-          <Link href="/tutoring" className="transition-colors hover:text-foreground/80">Tutoring</Link>
           <Link href="/consulting" className="transition-colors hover:text-foreground/80">Consulting</Link>
+          <Link href="/tutoring" className="transition-colors hover:text-foreground/80">Tutoring</Link>
           <Link href="/#projects" className="transition-colors hover:text-foreground/80">Projects</Link>
           <Link href="/#testimonials" className="transition-colors hover:text-foreground/80">Testimonials</Link>
           <Link href="/#reviews" className="transition-colors hover:text-foreground/80">Reviews</Link>

@@ -116,260 +116,258 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased`}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "EducationalService",
-              "name": "Riyad Shauk Private Programming Tutoring",
-              "description": "Patient, experienced programming tutor helping students of all ages build confidence in coding and computer science. From elementary school logic to advanced algorithms, I offer personalized 1-on-1 tutoring.",
-              "url": "https://riyadshauk.com/tutoring",
-              "telephone": "+1-310-866-6284",
-              "email": "riyad.shauk@gmail.com",
-              "priceRange": "$100-$150/hour",
-              "currenciesAccepted": "USD",
-              "paymentAccepted": "Cash, Credit Card, PayPal",
-              "areaServed": [
-                {
-                  "@type": "Place",
-                  "name": "Beverly Hills",
-                  "postalCode": "90210"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Beverly Hills",
-                  "postalCode": "90211"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Beverly Hills",
-                  "postalCode": "90212"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Santa Monica",
-                  "postalCode": "90402"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Santa Monica",
-                  "postalCode": "90401"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Santa Monica",
-                  "postalCode": "90403"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Santa Monica",
-                  "postalCode": "90405"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Brentwood",
-                  "postalCode": "90049"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Pacific Palisades",
-                  "postalCode": "90272"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Bel Air",
-                  "postalCode": "90077"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Westwood",
-                  "postalCode": "90024"
-                },
-                {
-                  "@type": "Place",
-                  "name": "West Los Angeles",
-                  "postalCode": "90064"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Culver City",
-                  "postalCode": "90232"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Culver City",
-                  "postalCode": "90230"
-                },
-                {
-                  "@type": "Place",
-                  "name": "La Cañada Flintridge",
-                  "postalCode": "91011"
-                },
-                {
-                  "@type": "Place",
-                  "name": "San Marino",
-                  "postalCode": "91108"
-                },
-                {
-                  "@type": "Place",
-                  "name": "South Pasadena",
-                  "postalCode": "91030"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Pasadena",
-                  "postalCode": "91105"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Pasadena",
-                  "postalCode": "91106"
-                }
-              ],
-              "serviceType": [
-                "Computer Science Tutoring",
-                "Programming Tutoring", 
-                "LeetCode Problem Solving",
-                "SWE Interview Preparation",
-                "Algorithm Tutoring",
-                "Data Structures Tutoring",
-                "SAT/AP Computer Science Tutoring",
-                "Test Preparation"
-              ],
-              "provider": {
-                "@type": "Person",
-                "name": "Riyad Shauk",
-                "jobTitle": "Private Programming Tutor",
-                "description": "Patient, experienced software engineer and programming tutor helping students of all ages build confidence and understanding in coding"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EducationalService",
+            "name": "Riyad Shauk Private Programming Tutoring",
+            "description": "Patient, experienced programming tutor helping students of all ages build confidence in coding and computer science. From elementary school logic to advanced algorithms, I offer personalized 1-on-1 tutoring.",
+            "url": "https://riyadshauk.com/tutoring",
+            "telephone": "+1-310-866-6284",
+            "email": "riyad.shauk@gmail.com",
+            "priceRange": "$100-$150/hour",
+            "currenciesAccepted": "USD",
+            "paymentAccepted": "Cash, Credit Card, PayPal",
+            "areaServed": [
+              {
+                "@type": "Place",
+                "name": "Beverly Hills",
+                "postalCode": "90210"
               },
-              "offers": {
-                "@type": "Offer",
+              {
+                "@type": "Place",
+                "name": "Beverly Hills",
+                "postalCode": "90211"
+              },
+              {
+                "@type": "Place",
+                "name": "Beverly Hills",
+                "postalCode": "90212"
+              },
+              {
+                "@type": "Place",
+                "name": "Santa Monica",
+                "postalCode": "90402"
+              },
+              {
+                "@type": "Place",
+                "name": "Santa Monica",
+                "postalCode": "90401"
+              },
+              {
+                "@type": "Place",
+                "name": "Santa Monica",
+                "postalCode": "90403"
+              },
+              {
+                "@type": "Place",
+                "name": "Santa Monica",
+                "postalCode": "90405"
+              },
+              {
+                "@type": "Place",
+                "name": "Brentwood",
+                "postalCode": "90049"
+              },
+              {
+                "@type": "Place",
+                "name": "Pacific Palisades",
+                "postalCode": "90272"
+              },
+              {
+                "@type": "Place",
+                "name": "Bel Air",
+                "postalCode": "90077"
+              },
+              {
+                "@type": "Place",
+                "name": "Westwood",
+                "postalCode": "90024"
+              },
+              {
+                "@type": "Place",
+                "name": "West Los Angeles",
+                "postalCode": "90064"
+              },
+              {
+                "@type": "Place",
+                "name": "Culver City",
+                "postalCode": "90232"
+              },
+              {
+                "@type": "Place",
+                "name": "Culver City",
+                "postalCode": "90230"
+              },
+              {
+                "@type": "Place",
+                "name": "La Cañada Flintridge",
+                "postalCode": "91011"
+              },
+              {
+                "@type": "Place",
+                "name": "San Marino",
+                "postalCode": "91108"
+              },
+              {
+                "@type": "Place",
+                "name": "South Pasadena",
+                "postalCode": "91030"
+              },
+              {
+                "@type": "Place",
+                "name": "Pasadena",
+                "postalCode": "91105"
+              },
+              {
+                "@type": "Place",
+                "name": "Pasadena",
+                "postalCode": "91106"
+              }
+            ],
+            "serviceType": [
+              "Computer Science Tutoring",
+              "Programming Tutoring", 
+              "LeetCode Problem Solving",
+              "SWE Interview Preparation",
+              "Algorithm Tutoring",
+              "Data Structures Tutoring",
+              "SAT/AP Computer Science Tutoring",
+              "Test Preparation"
+            ],
+            "provider": {
+              "@type": "Person",
+              "name": "Riyad Shauk",
+              "jobTitle": "Private Programming Tutor",
+              "description": "Patient, experienced software engineer and programming tutor helping students of all ages build confidence and understanding in coding"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "150",
+              "priceCurrency": "USD",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
                 "price": "150",
                 "priceCurrency": "USD",
-                "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": "150",
-                  "priceCurrency": "USD",
-                  "unitText": "hour"
-                }
+                "unitText": "hour"
+              }
+            },
+            "availableChannel": [
+              {
+                "@type": "ServiceChannel",
+                "serviceType": "Online Service",
+                "name": "Remote Tutoring"
               },
-              "availableChannel": [
-                {
-                  "@type": "ServiceChannel",
-                  "serviceType": "Online Service",
-                  "name": "Remote Tutoring"
-                },
-                {
-                  "@type": "ServiceChannel", 
-                  "serviceType": "In-Person Service",
-                  "name": "In-Person Tutoring",
-                  "areaServed": [
-                    {
-                      "@type": "Place",
-                      "name": "Beverly Hills",
-                      "postalCode": "90210"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "Beverly Hills",
-                      "postalCode": "90211"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "Beverly Hills",
-                      "postalCode": "90212"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "Santa Monica",
-                      "postalCode": "90402"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "Santa Monica",
-                      "postalCode": "90401"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "Santa Monica",
-                      "postalCode": "90403"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "Santa Monica",
-                      "postalCode": "90405"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "Brentwood",
-                      "postalCode": "90049"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "Pacific Palisades",
-                      "postalCode": "90272"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "Bel Air",
-                      "postalCode": "90077"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "Westwood",
-                      "postalCode": "90024"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "West Los Angeles",
-                      "postalCode": "90064"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "Culver City",
-                      "postalCode": "90232"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "Culver City",
-                      "postalCode": "90230"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "La Cañada Flintridge",
-                      "postalCode": "91011"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "San Marino",
-                      "postalCode": "91108"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "South Pasadena",
-                      "postalCode": "91030"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "Pasadena",
-                      "postalCode": "91105"
-                    },
-                    {
-                      "@type": "Place",
-                      "name": "Pasadena",
-                      "postalCode": "91106"
-                    }
-                  ]
-                }
-              ]
-            })
-          }}
-        />
-        {children}
-      </body>
-    </html>
+              {
+                "@type": "ServiceChannel", 
+                "serviceType": "In-Person Service",
+                "name": "In-Person Tutoring",
+                "areaServed": [
+                  {
+                    "@type": "Place",
+                    "name": "Beverly Hills",
+                    "postalCode": "90210"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Beverly Hills",
+                    "postalCode": "90211"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Beverly Hills",
+                    "postalCode": "90212"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Santa Monica",
+                    "postalCode": "90402"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Santa Monica",
+                    "postalCode": "90401"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Santa Monica",
+                    "postalCode": "90403"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Santa Monica",
+                    "postalCode": "90405"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Brentwood",
+                    "postalCode": "90049"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Pacific Palisades",
+                    "postalCode": "90272"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Bel Air",
+                    "postalCode": "90077"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Westwood",
+                    "postalCode": "90024"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "West Los Angeles",
+                    "postalCode": "90064"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Culver City",
+                    "postalCode": "90232"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Culver City",
+                    "postalCode": "90230"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "La Cañada Flintridge",
+                    "postalCode": "91011"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "San Marino",
+                    "postalCode": "91108"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "South Pasadena",
+                    "postalCode": "91030"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Pasadena",
+                    "postalCode": "91105"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Pasadena",
+                    "postalCode": "91106"
+                  }
+                ]
+              }
+            ]
+          })
+        }}
+      />
+      {children}
+    </>
   );
 }
