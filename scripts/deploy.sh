@@ -8,7 +8,7 @@
 set -e
 
 # Configuration
-REPO_OWNER="your-github-username"
+REPO_OWNER="riyadshauk"
 REPO_NAME="riyadshauk.com"
 BRANCH="main"
 DEPLOY_DIR="/home/riyad/repos/riyadshauk.com"
